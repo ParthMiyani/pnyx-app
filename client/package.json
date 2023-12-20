@@ -6,10 +6,22 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@thirdweb-dev/react": "^4.2.3",
+    "@thirdweb-dev/sdk": "^4.0.25",
+    "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "url": "latest",
+    "http": "npm:http-browserify",
+    "https": "npm:https-browserify",
+    "zlib": "npm:browserify-zlib",
+    "http-browserify": "latest",
+    "https-browserify": "latest",
+    "browserify-zlib": "latest",
+    "assert": "^2.0.0",
+    "stream": "^0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

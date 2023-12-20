@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  ThirdwebProvider,
+  ConnectWallet,
+  embeddedWallet,
+} from "@thirdweb-dev/react";
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThirdwebProvider
+      activeChain="goerli"
+      clientId="cbcd404b184023848f87c18cf46f1281"
+      supportedWallets={[embeddedWallet("email")]}
+    >
+      <ConnectWallet />
+    </ThirdwebProvider>
     </div>
   );
 }
