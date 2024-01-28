@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# PNYX/Team 7
 > _Note:_ This document will evolve throughout your project. You commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section). 
  > **This document will serve as a master plan between your team, your partner and your TA.**
 
@@ -24,6 +24,18 @@
   > Short (1 - 2 min' read max)
  * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
  * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
+
+ * Musical Artists who:
+   -	Are looking for alternatives to popular music streaming apps (such as Spotify or Apple Music) as currently, they only earn around 12% of the industry revenue (as the rest goes to the aforementioned apps, and their labels etc.)
+   -	Are looking to try out new genres of music outside of their usual output, whether that is due to a certain image they have built around them, or if their producers/label/managers want them to put out what is expected to be successful.
+   -	Want to earn a 98% profit on anything they sell through the PNYX app.
+   -	Want to be recognized only on the quality of music they create.
+* Fans and “superfans” of artists who:
+  -	Want to engage with music in a more gamified manner through a “blind audition” style.
+  -	Want to engage purely with the music regardless of marketing and prior biases/knowledge (or lack thereof) of artists.
+  -	Want access to exclusive perks such as (discord conversations, one on one conversations, meet and greets, tickets to concerts)
+  -	Want to directly support artists.
+  -	Want ownership of limited-edition versions of songs.
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
@@ -64,7 +76,8 @@
 
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
 
-Briefly describe which option you have agreed to.
+Briefly describe which option you have agreed to:
+Option 5.
 
 ----
 
@@ -76,6 +89,14 @@ Do a team-building activity in-person or online. This can be playing an online g
 * Get to know each other on a more personal level.
 * Provide a few sentences on what you did and share a picture or other evidence of your team building activity.
 * Share at least three fun facts from members of you team (total not 3 for each member).
+
+* 3 Team Fun Facts:
+  - Lance likes to collect sneakers.
+  - Maroosh has been to 10 different schools throughout his life.
+  - C++ was the first coding language that Andrew learned.
+* For the team building activity, we played Scribl.io together (screenshot attached below) as a fun way to get to know each other. It was difficult to meet in person due to scheduling issues, so we decided that this was the best available option.
+* ![image](https://github.com/csc301-2024-s/deliverable-1-25-pnyx/assets/76667567/9d2cb071-ef0c-4346-8aaa-0558ea3a3108)
+
 
 
 #### Q7: What are the roles & responsibilities on the team?
@@ -99,7 +120,10 @@ Describe meetings (and other events) you are planning to have.
  * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
  * You should have 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
    * You must keep track of meeting minutes and add them to your repo under "deliverables/minutes" folder
-   * You must have a regular meeting schedule established for the rest of the term.  
+   * You must have a regular meeting schedule established for the rest of the term.
+  
+   * Meet at least once a week (tentatively on Fridays) online through discord, open to meeting more if needed.
+   * The purpose of meeting will be to discuss current progress, any issues that have arisen and how we want to proceed. If there is a deliverable due, we will discuss that as well – so a weekly sync meeting.
   
 #### Q9: How will you organize your team?
 
@@ -122,6 +146,23 @@ List/describe the artifacts you will produce in order to organize your team.
  * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
  * How will you address the issue if one person doesn't contribute or is not responsive?
 
+**Communications:**
+* Meet team members at least once a week through Discord calls, but will be communicating through Discord text messages consistently (almost every day).
+* Meet PNYX partners at least once a week through Zoom calls (tentatively every Friday), other communication through emails.
+
+**Collaboration:**
+* Roles of interest (Assignment 1, Q8):
+  - Maroosh: Full-stack developer, Backend developer, Frontend developer, Database developer
+  - Lance: Frontend developer, Team manager
+* What can each member contribute to the team? (Assignment 1, Q9):
+  - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
+** I NEED HELP ANSWERING THESE 2 QUESTIONS BELOW**
+* How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
+ * How will you address the issue if one person doesn't contribute or is not responsive?
+
+
+
+
 ## Organisation Details
 
 #### Q11. How does your team fit within the overall team organisation of the partner?
@@ -134,3 +175,5 @@ List/describe the artifacts you will produce in order to organize your team.
 * Is your project the first step towards building this product? Is it the first prototype? Are you developing the frontend of a product whose backend is developed by the partner? Are you building the release pipelines for a product that is developed by the partner? Are you building a core feature set and take full ownership of these features?
 * You should also provide details of who else is contributing to what parts of the product, if you have this information. This is more important if the project that you will be working on has strong coupling with parts that will be contributed to by members other than your team (e.g. from partner).
 * You can be creative for these questions and even use a graphical or pictorial representation to demonstrate the fit.
+
+* Our project’s priority will be do fully implement the frontend of the PNYX mobile app to have it ready to be tested within 2 months. Thus, we are essentially building the frontend for the first prototype in real user hands. The main functionality of the backend has already been developed by the partner, however there is room for additions, such as improving the ML models for song recommendation and user matching, as well as moving from Stripe API to a blockchain integration based approach for payment and transaction management. If tester feedback is given back while we are still on this project, we will be implementing that as well.
