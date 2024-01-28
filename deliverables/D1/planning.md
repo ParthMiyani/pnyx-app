@@ -172,7 +172,7 @@ List/describe the artifacts you will produce in order to organize your team.
   - Maroosh: Full-stack developer, Backend developer, Frontend developer, Database developer
   - Lance: Frontend developer, Team manager
   - Thomas: Frontend/Backend Developer.
-  - Vidih: Frontend/Backend developer
+  - Vidhi: Frontend/Backend developer
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres), Python, and Java (though I might need a refresher with Java). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
   - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to recieve and give feedback.
