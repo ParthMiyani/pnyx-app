@@ -1,1 +1,36 @@
-
+Meeting Minutes (PNYX Meeting 1)
+Thursday, January 25th, 2024
+Attendees: Asar Qadir (PNYX) and Team 7
+Intro to Asar and PNYX:
+-	Asar described his background in the music industry.
+-	Inspiration of creating PNYX is to provide an alternative to music streaming apps, which subsequently provides fair compensation to musical artists.
+-	Demo of the PNYX app through a mock up (made through Figma and adobe aftereffects - https://youtu.be/Xhmx9OsfqSk)
+-	Description of the exclusive song collection and “blind audition” aspects of the PNYX app.
+-	Main goal is to make the app as decentralized as possible.
+Technical Background of PNYX:
+-	Transactions through blockchain, currently through Stripe API but want to switch to blockchain transactions to bypass 3rd parties.
+-	Building ML system for the music recommendation system.
+-	Want to launch the app in 1–2 months
+-	Frontend primarily implemented through React/React Native.
+-	Currently using a framework called truffle.
+What is Team 7’s role in this project?
+-	Project description shared to CSC301 mentions that the only work to be done is front-end, are the blockchain/ML/backend aspects completely finished?
+  o	What’s fully done backend is the payment system through stripe, and cloud storage data (for songs/user information).
+  o	Blockchain is still yet to be integrated.
+  o	ML system is also incomplete, with a lot of room for improvements.
+  o	Frontend needs to be built practically from the ground up.
+-	Is there an opportunity for Team 7 to work on any of the unfinished aspects (in addition to frontend) mentioned above?
+  o	Yes. Need to prioritize frontend to provide a testable product to customers (as there are many on the waitlist), but once that is finished, can work on anything (ML/blockchain etc.) and enhance other features.
+  o	In terms of complexity for frontend, one of the main challenges is to implement heavy 3D models, so will have to research
+-	Mentorship opportunities for students:
+  o	PNYX team very open to questions, and happy to help.
+-	Open to any new features that we (Team 7) might want to suggest as we work on the project.
+-	Summary of work to be done: Mobile and Web (?) app (frontend), blockchain, ML
+-	PNYX already has code in their own GitHub repository.
+-	In general, once frontend is implemented, very open to let Team 7 work on other facets of the project
+Project Pacing:
+-	As mentioned before, priority is to complete frontend fully asap, ideally within first or second month.
+-	After that is done, from month 2 or 3, can move on to ML and blockchain implementation.
+-	The rest, assuming frontend is complete and is able to be in the hands of testers, is to implement feedback.
+PNYX Team Meetings:
+-	Currently, their team meets every Friday evening around 7 PM EST.
