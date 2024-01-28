@@ -18,6 +18,11 @@
    For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
  * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
 
+ * The product is a web app and mobile app for PNYX that allows users to listen to music by building them a playlist based on their taste using machine learning. Users choose their favourite genres and artists and listen to music without seeing the artist or name of the song. They have 5 reveals per day, and they can purchase the song and get exclusive perks from the artist. Users can share their findings with their friends and list bought songs on the marketplace with their own price. This product helps support artists as it prioritizes meritocracy and offers them fair compensation.
+mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
+![image](https://github.com/csc301-2024-s/deliverable-1-25-pnyx/assets/74018027/d9da5ba9-6767-4d91-a7ff-e854bfcd9428)
+
+
 
 #### Q2: Who are your target users?
 
@@ -47,6 +52,9 @@
     * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
     * Does this application exist in another form? If so, how does your differ and provide value to the users?
     * How does this align with your partner's organization's values/mission/mandate?
+  
+    * This product allows users to listen to music in an unbiased way as they do not know the artist or the name of the song when listening. It also allows them to discover new and diverse music based on their music taste chosen by the ML algorithm and they are able to discover more music that they enjoy. Users also have access to unreleased and exclusive music and perks like exclusive merchandise, show tickets, or meet-and-greets. For artists, they would receive better compensation compared to other music platforms.  As of now, other people use Spotify, YouTube, and Apple Music for listening to and discovering music. Neither of these apps would give users the exclusive perks discussed or allow users to listen to music ‘blindly’ so users aren’t discovering music in an unbiased way. PNYX’s values are about supporting artists and changing the way we discover music, and this app does this by fairly compensating artists and by listening to music blindly.
+
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
@@ -62,6 +70,9 @@
  * How will you deploy the application?
  * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
  * Will you be using third party applications or APIs? If so, what are they?
+
+ * We are deciding on using the languages HTML, CSS, JavaScript and the framework React for the front end. The backend is done in Python and Truffle development environment. The deployment will be done on .xyz domain of our partners (pnyx.xyx). The Stripe API is used for payment. We will be using clean architecture principles and design patterns. 
+
 
 ----
 ## Intellectual Property Confidentiality Agreement 
@@ -111,6 +122,9 @@ List each team member and:
  * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
  * Why did you choose them to take that role? Specify if they are interested in learning that part, experienced in it, or any other reasons. Do no make things up. This part is not graded but may be reviewed later.
 
+ * The roles we have are partner liaison who is responsible for communication between the team and partner, project manager who is responsible for planning and managing the team, front-end developer who is responsible for developing the front-end features of the app, backend developer who will be helping with any backend work needed, and ML developer who will work on the music ML recommendation. Thomas is interested in frontend/backend developer because he wants to learn it since it is important in today’s job market. Andrew is interested in ML developer because he had previous projects, project manager because he has good communication skills and partner liaison. Rakan is interested in frontend and backend developer because he has past experience in backend from an internship and experience in ML. Maroosh is interested in frontend and backend developer because he wants to learn and gain more formal experience in this area to help secure internships and build connections within the industry. Lance is interested in partner liaison and interested in learned frontend and backend development. Vidhi is interested in frontend and backend development to learn new technologies and skills that would be helpful for an internship.
+
+
 
 #### Q8: How will you work as a team?
 
@@ -135,6 +149,9 @@ List/describe the artifacts you will produce in order to organize your team.
    * **How do you prioritize tasks?**
    * How do tasks get assigned to team members?
    * How do you determine the status of work from inception to completion?
+  
+   * We will use a task board to organize all our tasks and determine the tasks that needs to be done, their deadlines and who is working on it. As tasks are being worked on, the status of the task can be updated to in progress by the member working on it and once it is done it can be updated to completed. We will have regular meetings and meeting minutes to document what we discussed in the meeting. During the meetings, we will discuss all our tasks and decide who wants to work on what task. To prioritize tasks, we will look at any dependences, the time sensitivity, impact, etc and then rank tasks based on their urgency. 
+
 
 #### Q10: What are the rules regarding how your team works?
 
@@ -155,9 +172,11 @@ List/describe the artifacts you will produce in order to organize your team.
   - Maroosh: Full-stack developer, Backend developer, Frontend developer, Database developer
   - Lance: Frontend developer, Team manager
   - Thomas: Frontend/Backend Developer.
+  - Vidih: Frontend/Backend developer
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
   - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to recieve and give feedback.
+  - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
     
 **I NEED HELP ANSWERING THESE 2 QUESTIONS BELOW**
 
@@ -173,6 +192,9 @@ List/describe the artifacts you will produce in order to organize your team.
 * Given the team structure of your partner, what role do you think your team will play?
 * Examples include product development that includes developing new features, or quality assurance that includes developing features that test the product reliability, or software maintenance that includes fixing crucial bugs in the product.
 * Provide examples of why you think you fit this role.
+
+* Our team will play the role of the front-end developers, implementing the interactive front-end features for the app. We think we fit this role because the backend is already mostly done, and the first priority is to have a front-end working so they have a MVP. As of now, there is no existing front-end so we believe that our team will be fitting in as the front-end development team.
+
 
 #### Q12. How does your project fit within the overall product from the partner?
 * Look at the big picture of the product and think about how your project fits into this product.
