@@ -70,6 +70,10 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
 6. If the user likes a song, they can purchase it. It is done via defi or secure payment, provided by reliable 3rd parties. There is a limited time to purchase the songs and there is also a limited number of copies of the song available for purchase. Scarcity also affects the price - the less available copies of the song, the higher the price becomes, and after every single copy of the song is purchased, users can’t access this song anymore. After the song is revealed, it becomes visible for the user in their saved tracks menu. After the song is purchased, it gets transferred into their collection/profile menu and they are also given access to some rewards (offline meeting, tickets, VIP, souvenirs, etc.)
 7. Creators can upload new songs. While doing that, they can specify benefits for the buyer. Each time a sale goes through, the creator gets their money directly on their banking or blockchain account.
 
+Proof of partner approval:
+![image](https://github.com/csc301-2024-s/deliverable-1-25-pnyx/blob/main/deliverables/D1/proof1.PNG)
+![image](https://github.com/csc301-2024-s/deliverable-1-25-pnyx/blob/main/deliverables/D1/proof2.PNG)
+
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
 > Short (1-2 min' read max)
@@ -95,7 +99,7 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
 
 Briefly describe which option you have agreed to:
-Option 5.
+Option 5 - We are allowed to mention this project in our resume, interviews and such but are unable to share any code with anyone without the consent of our partner.
 
 ----
 
