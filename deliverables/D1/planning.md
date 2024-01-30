@@ -62,6 +62,13 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
  * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
  * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
  * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
+1. User logs in. Program loads their account, preferences and other details, and user can start interacting with the program.
+2. If the user is not logged in, they can register for an account. They can choose to be either creator or a listener (later mentioned as user). They can set up their profile - name, password, photo, connect to payment system, etc. Everything is secure (passwords are hashed, payments are processed by most reliable stakeholders, etc.
+3. User wants to pick some new songs. They tap «start listening». Then they choose their favorite genres and artists (more options may be applied later), and a ML model extracts specific features and generates a playlist with songs that are expected to suit the user. After user starts listening to the playlist, songs are loaded anonymously, so they don’t know what they're listening to.
+4. If user likes a song, they can either save it or reveal it. Saved songs are displayable in their account. There is limited amounts of reveals per day (to make user think before revealing).
+5. User accesses and listens to their saved songs anytime while they are available (if it is still in stock), but they all look the same (don’t have name and all have similar icons).
+6. If the user likes a song, they can purchase it. It is done via defi or secure payment, provided by reliable 3rd parties. There is a limited time to purchase the songs and there is also a limited number of copies of the song available for purchase. Scarcity also affects the price - the less available copies of the song, the higher the price becomes, and after every single copy of the song is purchased, users can’t access this song anymore. After the song is revealed, it becomes visible for the user in their saved tracks menu. After the song is purchased, it gets transferred into their collection/profile menu and they are also given access to some rewards (offline meeting, tickets, VIP, souvenirs, etc.)
+7. Creators can upload new songs. While doing that, they can specify benefits for the buyer. Each time a sale goes through, the creator gets their money directly on their banking or blockchain account.
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
@@ -170,13 +177,14 @@ List/describe the artifacts you will produce in order to organize your team.
 **Collaboration:**
 * Roles of interest (Assignment 1, Q8):
   - Maroosh: Full-stack developer, Backend developer, Frontend developer, Database developer
-  - Lance: Frontend developer, Team manager
-  - Thomas: Frontend/Backend Developer.
+  - Lance: Frontend developer, Backend developer, Team manager, Partner Liaison
+  - Thomas: Frontend/Backend Developer
   - Vidhi: Frontend/Backend developer
   - Shakeeb: Frontend/Backend devloper
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres), Python, and Java (though I might need a refresher with Java). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
-  - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to recieve and give feedback.
+  - Lance: Expertise in python, java, SQL, HTML, CSS, REST APIs. Looking forward to focusing more on working with the frontend and learning new technologies. I would also like to work with backend a bit in order to gain a well-rounded understanding of the entire project.
+  - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to receive and give feedback.
   - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
   - Shakeeb: I possess a well-rounded background in both Frontend and Backend development. My expertise includes utilizing Python (+ Flask) and Java for Backend development, coupled with proficiency in HTML, CSS, ReactJS, and RESTful APIs for Frontend developemnt. Currently learning Django.
     
