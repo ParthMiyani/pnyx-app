@@ -23,14 +23,9 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
 ![image](https://github.com/csc301-2024-s/deliverable-1-25-pnyx/assets/74018027/d9da5ba9-6767-4d91-a7ff-e854bfcd9428)
 
 
-
 #### Q2: Who are your target users?
 
-  > Short (1 - 2 min' read max)
- * Be specific (e.g. a 'a third-year university student studying Computer Science' and not 'a student')
- * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
-
- * Musical Artists who:
+* Musical Artists who:
    -	Are looking for alternatives to popular music streaming apps (such as Spotify or Apple Music) as currently, they only earn around 12% of the industry revenue (as the rest goes to the aforementioned apps, and their labels etc.)
    -	Are looking to try out new genres of music outside of their usual output, whether that is due to a certain image they have built around them, or if their producers/label/managers want them to put out what is expected to be successful.
    -	Want to earn a 98% profit on anything they sell through the PNYX app.
@@ -58,10 +53,7 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
- * At least 5 user stories concerning the main features of the application - note that this can broken down further
- * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
- * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
- * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
+**User Stories:**
 1. User logs in. Program loads their account, preferences and other details, and user can start interacting with the program.
 2. If the user is not logged in, they can register for an account. They can choose to be either creator or a listener (later mentioned as user). They can set up their profile - name, password, photo, connect to payment system, etc. Everything is secure (passwords are hashed, payments are processed by most reliable stakeholders, etc.
 3. User wants to pick some new songs. They tap «start listening». Then they choose their favorite genres and artists (more options may be applied later), and a ML model extracts specific features and generates a playlist with songs that are expected to suit the user. After user starts listening to the playlist, songs are loaded anonymously, so they don’t know what they're listening to.
@@ -107,11 +99,6 @@ Option 5 - We are allowed to mention this project in our resume, interviews and 
 
 #### Q6: Have you met with your team?
 
-Do a team-building activity in-person or online. This can be playing an online game, meeting for bubble tea, lunch, or any other activity you all enjoy.
-* Get to know each other on a more personal level.
-* Provide a few sentences on what you did and share a picture or other evidence of your team building activity.
-* Share at least three fun facts from members of you team (total not 3 for each member).
-
 * 3 Team Fun Facts:
   - Lance likes to collect sneakers.
   - Maroosh has been to 10 different schools throughout his life.
@@ -138,14 +125,6 @@ List each team member and:
 
 
 #### Q8: How will you work as a team?
-
-Describe meetings (and other events) you are planning to have. 
- * When and where? Recurring or ad hoc? In-person or online?
- * What's the purpose of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
- * You should have 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
-   * You must keep track of meeting minutes and add them to your repo under "deliverables/minutes" folder
-   * You must have a regular meeting schedule established for the rest of the term.
   
    * Meet at least once a week (tentatively on Fridays) online through discord, open to meeting more if needed.
    * The purpose of meeting will be to discuss current progress, any issues that have arisen and how we want to proceed. If there is a deliverable due, we will discuss that as well – so a weekly sync meeting.
@@ -191,13 +170,10 @@ List/describe the artifacts you will produce in order to organize your team.
   - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to receive and give feedback.
   - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
   - Shakeeb: I possess a well-rounded background in both Frontend and Backend development. My expertise includes utilizing Python (+ Flask) and Java for Backend development, coupled with proficiency in HTML, CSS, ReactJS, and RESTful APIs for Frontend developemnt. Currently learning Django.
-    
-**I NEED HELP ANSWERING THESE 2 QUESTIONS BELOW**
-
 * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
- * How will you address the issue if one person doesn't contribute or is not responsive?
-
-
+  - We will set consistent reminders, make discord events and make sure to communicate often to ensure that team members attend meetings.
+* How will you address the issue if one person doesn't contribute or is not responsive?
+  - At first, we will try to reach out and remind them that they are not contributing enough or are being unresponsive. The next step would be to have a discussion within the team, as well as directly with the person in question, to explain to them how their actions are negatively impacting the group, and remind them that further action will be taken unless they get back on track. If the issue still persists, we will contact our TA and report the issue directly.
 
 
 ## Organisation Details
