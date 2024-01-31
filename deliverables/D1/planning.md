@@ -164,12 +164,14 @@ List/describe the artifacts you will produce in order to organize your team.
   - Thomas: Frontend/Backend Developer
   - Vidhi: Frontend/Backend developer
   - Shakeeb: Frontend/Backend devloper
+  - Rakan: Full-stack dev, Frontend/Backend developer
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres), Python, and Java (though I might need a refresher with Java). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
   - Lance: Expertise in python, java, SQL, HTML, CSS, REST APIs. Looking forward to focusing more on working with the frontend and learning new technologies. I would also like to work with backend a bit in order to gain a well-rounded understanding of the entire project.
   - Thomas: Learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to receive and give feedback.
   - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
   - Shakeeb: I possess a well-rounded background in both Frontend and Backend development. My expertise includes utilizing Python (+ Flask) and Java for Backend development, coupled with proficiency in HTML, CSS, ReactJS, and RESTful APIs for Frontend developemnt. Currently learning Django.
+  - Rakan: Experience in Python, ML libaries, Java, C, MIPS, and currently working on a frontend project, so looking forward on applying backend and frontend skills at the same time.
 * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
   - We will set consistent reminders, make discord events and make sure to communicate often to ensure that team members attend meetings.
 * How will you address the issue if one person doesn't contribute or is not responsive?
