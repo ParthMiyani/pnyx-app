@@ -107,14 +107,6 @@ Describe the different roles on the team and the responsibilities associated wit
 #### Q10: What are the rules regarding how your team works?
 
 **Communications:**
- * What is the expected frequency? What methods/channels will be used? 
- * If you have a partner project, what is your process for communicating with your partner?
- 
-**Collaboration: (Share your responses to Q8 & Q9 from A1)**
- * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
- * How will you address the issue if one person doesn't contribute or is not responsive?
-
-**Communications:**
 * Meet team members at least once a week through Discord calls, but will be communicating through Discord text messages consistently (almost every day).
 * Meet PNYX partners at least once a week through Zoom calls (tentatively every Friday), other communication through emails.
 
@@ -130,7 +122,7 @@ Describe the different roles on the team and the responsibilities associated wit
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres), Python, and Java (though I might need a refresher with Java). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
   - Lance: Expertise in python, java, SQL, HTML, CSS, REST APIs. Looking forward to focusing more on working with the frontend and learning new technologies. I would also like to work with backend a bit in order to gain a well-rounded understanding of the entire project.
-  - Andrii: Experience in ML, Java, Python, PostgreSQL/MySQL, C/C++/C#, HTML/CSS/JS/PHP. I am looking forward to taking part in Machine Learning part of this project (songs recommendation system and features extracting). If this position is unavailable, I would like to focus on Database Designing or Applicatio Developent. Also I can help others with frontend/backend (I have experience but don't like these fields)
+  - Andrii: Experience in ML, Java, Python, PostgreSQL/MySQL, C/C++/C#, HTML/CSS/JS/PHP. I am looking forward to taking part in Machine Learning part of this project (songs recommendation system and features extracting). If this position is unavailable, I would like to focus on Database Designing or Application Development. Also I can help others with frontend/backend (I have experience but don't like these fields)
   - Thomas: Knows Python, C++, Java, C#, learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to receive and give feedback.
   - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
   - Shakeeb: I possess a well-rounded background in both Frontend and Backend development. My expertise includes utilizing Python (+ Flask) and Java for Backend development, coupled with proficiency in HTML, CSS, ReactJS, and RESTful APIs for Frontend developemnt. Currently learning Django.
@@ -146,7 +138,7 @@ Describe the different roles on the team and the responsibilities associated wit
 #### Q11. How does your team fit within the overall team organisation of the partner?
 
 
-* Our team will play the role of the front-end developers, implementing the interactive front-end features for the app. We think we fit this role because the backend is already mostly done, and the first priority is to have a front-end working so they have a MVP. As of now, there is no existing front-end so we believe that our team will be fitting in as the front-end development team.
+* Our team will play the role of the front-end developers, implementing the interactive front-end features for the app. We think we fit this role because the backend is already mostly done, and the first priority is to have a front-end working so they have a MVP. As of now, there is no existing front-end so we believe that our team will be fitting in as the front-end development team. If the frontend is fully implemented before the term is over, we will move on to aspects such as ML and blockchain implementation.
 
 
 #### Q12. How does your project fit within the overall product from the partner?
