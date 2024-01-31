@@ -6,17 +6,6 @@
  
 #### Q1: What is the product?
 
- > Short (1 - 2 min' read)
- * Start with a single sentence, high-level description of the product.
- * Be clear - Describe the problem you are solving in simple terms.
- * Specify if you have a partner and who they are.
- * Be concrete. For example:
-    * What are you planning to build? Is it a website, mobile app, browser extension, command-line app, etc.?      
-    * When describing the problem/need, give concrete examples of common use cases.
-    * Assume your the reader knows nothing about the partner or the problem domain and provide the necessary context. 
- * Focus on *what* your product does, and avoid discussing *how* you're going to implement it.      
-   For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
- * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
 
  * The product is a web app and mobile app for PNYX that allows users to listen to music by building them a playlist based on their taste using machine learning. Users choose their favourite genres and artists and listen to music without seeing the artist or name of the song. They have 5 reveals per day, and they can purchase the song and get exclusive perks from the artist. Users can share their findings with their friends and list bought songs on the marketplace with their own price. This product helps support artists as it prioritizes meritocracy and offers them fair compensation.
 mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
@@ -39,15 +28,6 @@ mockup: https://www.youtube.com/watch?v=Xhmx9OsfqSk
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-> Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how and how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
-    * Does this application exist in another form? If so, how does your differ and provide value to the users?
-    * How does this align with your partner's organization's values/mission/mandate?
-  
     * This product allows users to listen to music in an unbiased way as they do not know the artist or the name of the song when listening. It also allows them to discover new and diverse music based on their music taste chosen by the ML algorithm and they are able to discover more music that they enjoy. Users also have access to unreleased and exclusive music and perks like exclusive merchandise, show tickets, or meet-and-greets. For artists, they would receive better compensation compared to other music platforms.  As of now, other people use Spotify, YouTube, and Apple Music for listening to and discovering music. Neither of these apps would give users the exclusive perks discussed or allow users to listen to music ‘blindly’ so users aren’t discovering music in an unbiased way. PNYX’s values are about supporting artists and changing the way we discover music, and this app does this by fairly compensating artists and by listening to music blindly.
 
 
@@ -68,11 +48,6 @@ Proof of partner approval:
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
-> Short (1-2 min' read max)
- * What is the technology stack? Specify languages, frameworks, libraries, PaaS products or tools to be used or being considered. 
- * How will you deploy the application?
- * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
- * Will you be using third party applications or APIs? If so, what are they?
 
  * We are deciding on using the languages HTML, CSS, JavaScript and the framework React for the front end. The backend is done in Python and Truffle development environment. The deployment will be done on .xyz domain of our partners (pnyx.xyx). The Stripe API is used for payment. We will be using clean architecture principles and design patterns. 
 
@@ -111,14 +86,7 @@ Option 5 - We are allowed to mention this project in our resume, interviews and 
 #### Q7: What are the roles & responsibilities on the team?
 
 Describe the different roles on the team and the responsibilities associated with each role. 
- * Roles should reflect the structure of your team and be appropriate for your project. One person may have multiple roles.  
- * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder.
- * At least one person must be identified as the dedicated partner liaison. They need to have great organization and communication skills.
- * Everyone must contribute to code. Students who don't contribute to code enough will receive a lower mark at the end of the term.
-
-List each team member and:
- * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
- * Why did you choose them to take that role? Specify if they are interested in learning that part, experienced in it, or any other reasons. Do no make things up. This part is not graded but may be reviewed later.
+ 
 
  * The roles we have are partner liaison who is responsible for communication between the team and partner, project manager who is responsible for planning and managing the team, front-end developer who is responsible for developing the front-end features of the app, backend developer who will be helping with any backend work needed, and ML developer who will work on the music ML recommendation. Thomas is interested in frontend/backend developer because he wants to learn it since it is important in today’s job market. Andrew is interested in ML developer because he had previous projects, project manager because he has good communication skills and partner liaison. Rakan is interested in frontend and backend developer because he has past experience in backend from an internship and experience in ML. Maroosh is interested in frontend and backend developer because he wants to learn and gain more formal experience in this area to help secure internships and build connections within the industry. Lance is interested in partner liaison and interested in learning frontend and backend development. Vidhi is interested in frontend and backend development to learn new technologies and skills that would be helpful for an internship.
 
@@ -131,14 +99,6 @@ List each team member and:
   
 #### Q9: How will you organize your team?
 
-List/describe the artifacts you will produce in order to organize your team.       
-
- * Artifacts can be To-Do lists, Task boards, schedule(s), meeting minutes, etc.
- * We want to understand:
-   * How do you keep track of what needs to get done? (You must grant your TA and partner access to systems you use to manage work)
-   * **How do you prioritize tasks?**
-   * How do tasks get assigned to team members?
-   * How do you determine the status of work from inception to completion?
   
    * We will use a task board to organize all our tasks and determine the tasks that needs to be done, their deadlines and who is working on it. As tasks are being worked on, the status of the task can be updated to in progress by the member working on it and once it is done it can be updated to completed. We will have regular meetings and meeting minutes to document what we discussed in the meeting. During the meetings, we will discuss all our tasks and decide who wants to work on what task. To prioritize tasks, we will look at any dependences, the time sensitivity, impact, etc and then rank tasks based on their urgency. 
 
@@ -181,9 +141,7 @@ List/describe the artifacts you will produce in order to organize your team.
 ## Organisation Details
 
 #### Q11. How does your team fit within the overall team organisation of the partner?
-* Given the team structure of your partner, what role do you think your team will play?
-* Examples include product development that includes developing new features, or quality assurance that includes developing features that test the product reliability, or software maintenance that includes fixing crucial bugs in the product.
-* Provide examples of why you think you fit this role.
+
 
 * Our team will play the role of the front-end developers, implementing the interactive front-end features for the app. We think we fit this role because the backend is already mostly done, and the first priority is to have a front-end working so they have a MVP. As of now, there is no existing front-end so we believe that our team will be fitting in as the front-end development team.
 
