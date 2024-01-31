@@ -122,6 +122,7 @@ Describe the different roles on the team and the responsibilities associated wit
 * Roles of interest (Assignment 1, Q8):
   - Maroosh: Full-stack developer, Backend developer, Frontend developer, Database developer
   - Lance: Frontend developer, Backend developer, Team manager, Partner Liaison
+  - Andrii: Machine Learning Developer, Database developer, Partner Liaison, can help with frontend/backend
   - Thomas: Frontend/Backend Developer
   - Vidhi: Frontend/Backend developer
   - Shakeeb: Frontend/Backend devloper
@@ -129,6 +130,7 @@ Describe the different roles on the team and the responsibilities associated wit
 * What can each member contribute to the team? (Assignment 1, Q9):
   - Maroosh: I have experience in HTML, CSS, JavaScript, SQL (Postgres), Python, and Java (though I might need a refresher with Java). I am currently taking CSC309, so I should be helpful in web programming by learning React, Django, and RESTful APIs. I am also a highly motivated individual and work well in a team setting. I am open to communication and receptive to advice and suggestions.
   - Lance: Expertise in python, java, SQL, HTML, CSS, REST APIs. Looking forward to focusing more on working with the frontend and learning new technologies. I would also like to work with backend a bit in order to gain a well-rounded understanding of the entire project.
+  - Andrii: Experience in ML, Java, Python, PostgreSQL/MySQL, C/C++/C#, HTML/CSS/JS/PHP. I am looking forward to taking part in Machine Learning part of this project (songs recommendation system and features extracting). If this position is unavailable, I would like to focus on Database Designing or Applicatio Developent. Also I can help others with frontend/backend (I have experience but don't like these fields)
   - Thomas: Knows Python, C++, Java, C#, learning backend and frontend at the moment so I may be able to contribute more in those field for the team. Highly active online to receive and give feedback.
   - Vidhi: I have experience in Python, and HTML, CSS, Javascript, React, SQL and web dev so I can contribute to frontend, backend and database
   - Shakeeb: I possess a well-rounded background in both Frontend and Backend development. My expertise includes utilizing Python (+ Flask) and Java for Backend development, coupled with proficiency in HTML, CSS, ReactJS, and RESTful APIs for Frontend developemnt. Currently learning Django.
