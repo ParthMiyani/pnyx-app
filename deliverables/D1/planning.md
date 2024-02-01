@@ -142,9 +142,5 @@ Describe the different roles on the team and the responsibilities associated wit
 
 
 #### Q12. How does your project fit within the overall product from the partner?
-* Look at the big picture of the product and think about how your project fits into this product.
-* Is your project the first step towards building this product? Is it the first prototype? Are you developing the frontend of a product whose backend is developed by the partner? Are you building the release pipelines for a product that is developed by the partner? Are you building a core feature set and take full ownership of these features?
-* You should also provide details of who else is contributing to what parts of the product, if you have this information. This is more important if the project that you will be working on has strong coupling with parts that will be contributed to by members other than your team (e.g. from partner).
-* You can be creative for these questions and even use a graphical or pictorial representation to demonstrate the fit.
 
 * Our project’s priority will be do fully implement the frontend of the PNYX mobile app to have it ready to be tested within 2 months. Thus, we are essentially building the frontend for the first prototype in real user hands. The main functionality of the backend has already been developed by the partner, however there is room for additions, such as improving the ML models for song recommendation and user matching, as well as moving from Stripe API to a blockchain integration based approach for payment and transaction management. If tester feedback is given back while we are still on this project, we will be implementing that as well.
