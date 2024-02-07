@@ -3,17 +3,9 @@ import WelcomeScreen from './screens/welcomeScreen';
 import {NavigationContainer, DarkTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GenresScreen from './screens/genresScreen';
+import MyTheme from './components/uiComponents/myTheme';
 
 const Stack = createNativeStackNavigator();
-
-const MyTheme = {
-  ...DarkTheme,
-  colors: {
-    ...DarkTheme.colors,
-    color: '#E7CFFF',
-    text: '#E7CFFF',
-  },
-};
 
 export default function App() {
   return (

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import SwipeButton from 'rn-swipe-button';
-// import {Icon} from '../assets/icons/index';
+import {Icon} from '../assets/icons';
 import ICONS from '../assets/icons/icons';
 
 export default function WelcomeScreenSwipeButton(porps: any) {
@@ -16,7 +16,7 @@ export default function WelcomeScreenSwipeButton(porps: any) {
         // TODO: Fix when swipe button library is updated
         // @ts-ignore
         thumbIconComponent={() => {
-          return <ICONS.voice />;
+          return <Icon name="voice" size={24} />;
         }}
         thumbIconBackgroundColor="#FFFFFF"
         thumbIconBorderColor="rgba(0, 0, 0, 0)"

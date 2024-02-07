@@ -26,7 +26,6 @@ export default function WelcomeScreen({navigation}: {navigation: any}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
   },
   headingText: {
     fontSize: 30,
