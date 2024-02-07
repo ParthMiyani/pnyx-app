@@ -1,29 +1,37 @@
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
-
-import AppHeader from './components/appHeader';
-import AppFooter from './components/appFooter';
 import WelcomeScreen from './screens/welcomeScreen';
+import {NavigationContainer, DarkTheme} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import GenresScreen from './screens/genresScreen';
+
+const Stack = createNativeStackNavigator();
+
+const MyTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    color: '#E7CFFF',
+    text: '#E7CFFF',
+  },
+};
+
 export default function App() {
   return (
-    <>
-      <View style={styles.container}>
-        <AppHeader />
-        <WelcomeScreen />
-      </View>
-      <View style={styles.footerContainer}>
-        <AppFooter />
-      </View>
-    </>
+    <NavigationContainer theme={MyTheme}>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={WelcomeScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Genres"
+          component={GenresScreen}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#31304D',
-  },
-  footerContainer: {
-    backgroundColor: '#31304D',
-  },
-});
+// const styles = StyleSheet.create({});

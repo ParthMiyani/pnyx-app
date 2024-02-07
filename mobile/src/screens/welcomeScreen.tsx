@@ -1,15 +1,24 @@
 import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import CustomSwipeButton from '../components/customSwipeButton';
+import {View, Text, Image, StyleSheet} from 'react-native';
+import images from '../assets/images/images';
+import WelcomeScreenSwipeButton from '../components/WelcomeScreenSwipeButton';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}: {navigation: any}) {
   return (
     <View style={styles.container}>
+      <Text style={styles.headingText}>WELCOME TO</Text>
       <Text style={styles.headingText}>PNYX</Text>
+      <Image style={styles.cube} source={images.cubeImage} />
       <Text style={styles.subText}>
-        DISCOVER TRACKS AND SHARE COLLECTIONS WITH LIKE-MINDED FRIENDS
+        DISCOVER TRACKS AND{'\n'}SHARE COLLECTIONS{'\n'}WITH LIKE-MINDED FRIENDS
       </Text>
-      <CustomSwipeButton />
+      <WelcomeScreenSwipeButton
+        onSwipeSuccess={() => navigation.navigate('Genres')}
+      />
+      <View style={{flexDirection: 'row'}}>
+        <Text style={styles.accountText}>Have an account</Text>
+        <Text style={styles.loginText}>Log In</Text>
+      </View>
     </View>
   );
 }
@@ -17,18 +26,33 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000000',
   },
   headingText: {
-    padding: 40,
     fontSize: 30,
-    color: '#EDEFEE',
     textAlign: 'center',
+  },
+  cube: {
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
   },
   subText: {
     fontSize: 24,
-    paddingTop: 300,
     marginVertical: 8,
-    color: '#EDEFEE',
     textAlign: 'center',
+  },
+  accountText: {
+    fontSize: 14,
+    fontFamily: 'DM Sans',
+    fontWeight: '400',
+    lineHeight: 28,
+  },
+  loginText: {
+    fontSize: 14,
+    fontFamily: 'DM Sans',
+    fontWeight: '400',
+    textDecorationLine: 'underline',
+    lineHeight: 28,
   },
 });
