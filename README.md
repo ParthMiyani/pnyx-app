@@ -1,8 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/u3U9Ll19)
 
-**Partner Information**
+**Partner Information and Project Description**
 
 * PNYX
+* Contact: Asar Qadir (CEO), asarqadir@gmail.com
+* PNYX is an interactive platform designed for uncovering exclusive and unreleased music, gamifying the discovery process. Emphasizing content quality over artists' outward presentation and promotional budgets, PNYX provides users with a distinctive experience. Through the platform, users can discover hidden tracks, make purchases, and access exclusive features like merchandise, concert tickets, and meet-and-greet opportunities.
 
 **Team Information**
 
