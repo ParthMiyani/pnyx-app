@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import SwipeButton from 'rn-swipe-button';
 import {Icon} from '../assets/icons';
-import ICONS from '../assets/icons/icons';
 
 export default function WelcomeScreenSwipeButton(porps: any) {
   return (

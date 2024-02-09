@@ -1,6 +1,6 @@
 <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Voice">
-<path id="Vector" d="M10 1L10 13M14.5 2.5V11.5M19 5.5V8.5M5.5 2.5L5.5 11.5M1 5.5L1 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+<path id="Vector" d="M10 1L10 13M14.5 2.5V11.5M19 5.5V8.5M5.5 2.5L5.5 11.5M1 5.5L1 8.5" stroke="#26262C" stroke-width="1.5" stroke-linecap="round" />
 </g>
 <!-- stroke = url(#paint0_linear_74_323) in path to make it gradient -->
 <!-- <defs>

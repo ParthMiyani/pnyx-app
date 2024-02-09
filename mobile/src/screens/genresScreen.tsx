@@ -11,8 +11,8 @@ export default function GenresScreen() {
     <View style={{...styles.container}}>
       <AppHeader title="Choose some genres" />
       <Text style={styles.subText}>
-        Select a minimum of 4 tracks or more, so we can generate a playlist for
-        you
+        Select a minimum of 4 tracks or more {'\n'} so we can generate a
+        playlist for you
       </Text>
       <Image style={styles.cube} source={images.cubeImage} />
     </View>
@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   subText: {
-    fontSize: 24,
-    marginVertical: 8,
+    fontSize: 14,
+    margin: 8,
+    paddingBottom: 30,
     textAlign: 'center',
   },
 });
