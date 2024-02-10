@@ -12,6 +12,8 @@
 
 ## Key Features
  * Describe the key features in the application that the user can access.
+      
+       - The user can auction the songs they bought
  * Provide a breakdown or detail for each feature.
  * This section will be used to assess the value of the features built
 
@@ -22,6 +24,10 @@
     - Library Screen:
  * Users will get tailored music reccomendations through the ML system.
  * Users can make payments to purchase tracks/albums/other exclusive merchandise.
+ * The user can select the type of genre of the songs they want to get recommended for.
+ * The user would get reccomend random songs without revealing what the song is
+ * The user can unlock the songs using tokens that regenerate daily
+ * The user can change the theme of the website
 ​
 ## Instructions
  * Clear instructions for how to use the application from the end-user's perspective
