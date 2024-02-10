@@ -57,7 +57,11 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
  ## Coding Standards and Guidelines
  Keep this section brief, a maximum of 2-3 lines. You would want to read through this [article](https://www.geeksforgeeks.org/coding-standards-and-guidelines/) to get more context about what this section is for before attempting to answer.
   * These are 2 optional resources that you might want to go through: [article with High level explanation](https://blog.codacy.com/coding-standards-what-are-they-and-why-do-you-need-them/) and [this article with Detailed Explanation](https://google.github.io/styleguide/)
-​
+​ * Name variables and functions based on what they do
+ * Use Getter and Setter functions
+ * avoid the use of digits in variable names.
+ * 150 Characters per line
+ * Code should be easily understandable, comment sections of code if necessary
  ## Licenses 
 ​
  Keep this section as brief as possible. You may read this [Github article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) for a start.
