@@ -4,6 +4,7 @@ import {NavigationContainer, DarkTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GenresScreen from './screens/genresScreen';
 import MyTheme from './components/uiComponents/myTheme';
+import CustomBackground from './components/customBackground';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
+          // component={CustomBackground}
           component={WelcomeScreen}
           options={{headerShown: false}}
         />

@@ -1,12 +1,12 @@
 import {View, Text, StyleSheet} from 'react-native';
-import CustomCricle from './uiComponents/customCircle';
+import CustomCricleButton from './uiComponents/customCircleButton';
 
 export default function AppHeader({title}: {title: string}) {
   return (
     <View style={styles.container}>
-      <CustomCricle iconName="left-arrow" />
+      <CustomCricleButton iconName="left-arrow" />
       <Text style={styles.headingText}>{title}</Text>
-      <CustomCricle iconName="right-arrow" />
+      <CustomCricleButton iconName="right-arrow" />
     </View>
   );
 }

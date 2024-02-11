@@ -5,7 +5,7 @@ const MyTheme: Theme = {
   colors: {
     ...DarkTheme.colors,
     primary: '#E7CFFF', // primary color for your app, usually your brand color.
-    background: '#000000', // background color for screens.
+    // background: 'rgb(52, 52, 52, 0.8)', // background color for screens.
     // card: '#E7CFFF', // The background color of card-like elements, such as headers, tab bars etc.
     text: '#E7CFFF', // text color for content.
     border: '#E7CFFF', // color for borders, like the lines between different sections.

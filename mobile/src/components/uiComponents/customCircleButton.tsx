@@ -1,15 +1,14 @@
 import {Dimensions, Pressable, StyleSheet, Text} from 'react-native';
 import {Icon} from '../../assets/icons';
-import {Circle} from 'react-native-svg';
 
 function alert(arg0: string): void {
   throw new Error('Function not implemented.');
 }
 
-export default function CustomCricle(props: any) {
+export default function CustomCricleButton(props: any) {
   return (
     <Pressable onPress={() => alert('Pressed')} style={styles.circle}>
-      <Icon name={props.iconName} size={16} />
+      <Icon name={props.iconName} size={24} />
     </Pressable>
   );
 }
@@ -20,9 +19,9 @@ const styles = StyleSheet.create({
       Math.round(
         Dimensions.get('window').width + Dimensions.get('window').height,
       ) / 2,
-    width: Dimensions.get('window').width * 0.14,
-    height: Dimensions.get('window').width * 0.14,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    width: Dimensions.get('window').width * 0.15,
+    height: Dimensions.get('window').width * 0.15,
+    backgroundColor: 'rgba(52, 52, 52, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
   },
