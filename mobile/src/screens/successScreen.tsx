@@ -4,7 +4,7 @@ import WelcomeScreenSwipeButton from '../components/WelcomeScreenSwipeButton';
 import CustomBackground from '../components/customBackground';
 import {useTheme} from '@react-navigation/native';
 
-export default function WelcomeScreen({navigation}: {navigation: any}) {
+export default function SuccessScreen({navigation}: {navigation: any}) {
   const {colors} = useTheme();
 
   return (
@@ -15,29 +15,18 @@ export default function WelcomeScreen({navigation}: {navigation: any}) {
       <View style={styles.content}>
         <View style={styles.headingContainer}>
           <Text style={{...styles.headingText, color: colors.primary}}>
-            WELCOME TO
-          </Text>
-          <Text style={{...styles.companyText, color: colors.primary}}>
-            PNYX
+            Success!
           </Text>
         </View>
         <Image style={styles.cube} source={images.cubeImage} />
         <Text style={{...styles.subText, color: colors.primary}}>
-          DISCOVER TRACKS AND{'\n'}SHARE COLLECTIONS{'\n'}WITH LIKE-MINDED
-          FRIENDS
+          Dive into the full playlist and buy up to 5{'\n'}tracks daily. Share
+          your discoveries with{'\n'}the PNYX community.
         </Text>
         <View style={styles.swipeContainer}>
           <WelcomeScreenSwipeButton
-            onSwipeSuccess={() => navigation.navigate('Genres')}
+            onSwipeSuccess={() => navigation.navigate('Home')}
           />
-        </View>
-        <View style={styles.authTextContainer}>
-          <Text style={{...styles.accountText, color: colors.primary}}>
-            Have an account
-          </Text>
-          <Text style={{...styles.loginText, color: colors.primary}}>
-            Log In
-          </Text>
         </View>
       </View>
     </View>
@@ -90,19 +79,5 @@ const styles = StyleSheet.create({
   },
   swipeContainer: {
     height: 100,
-  },
-  authTextContainer: {
-    // backgroundColor: 'red',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  accountText: {
-    fontSize: 14,
-    lineHeight: 28,
-  },
-  loginText: {
-    fontSize: 14,
-    textDecorationLine: 'underline',
-    lineHeight: 28,
   },
 });

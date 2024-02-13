@@ -5,7 +5,7 @@ import AppHeader from '../components/appHeader';
 import CustomBackground from '../components/customBackground';
 import CustomSearchBar from '../components/uiComponents/customSearchBar';
 
-export default function GenresScreen({navigation}: {navigation: any}) {
+export default function ArtistScreen({navigation}: {navigation: any}) {
   const {colors} = useTheme();
 
   return (
@@ -18,13 +18,13 @@ export default function GenresScreen({navigation}: {navigation: any}) {
           iconNameLeft="left-arrow"
           // TODO: icon right in temprary
           iconNameRight="right-arrow"
-          title="Choose some genres"
+          title="Choose some artits"
           onTouchLeft={() => {
             navigation.goBack();
           }}
           // TODO: icon right in temprary
           onTouchRight={() => {
-            navigation.navigate('Artist');
+            navigation.navigate('Success');
           }}
         />
         <Text style={{...styles.subText, color: colors.primary}}>

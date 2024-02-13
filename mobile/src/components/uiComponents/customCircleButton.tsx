@@ -5,9 +5,12 @@ function alert(arg0: string): void {
   throw new Error('Function not implemented.');
 }
 
-export default function CustomCricleButton(props: any) {
+export default function CustomCricleButton(props: {
+  iconName: string;
+  onTouchCricle: () => void;
+}) {
   return (
-    <Pressable onPress={() => alert('Pressed')} style={styles.circle}>
+    <Pressable onPress={props.onTouchCricle} style={styles.circle}>
       <Icon name={props.iconName} size={24} />
     </Pressable>
   );

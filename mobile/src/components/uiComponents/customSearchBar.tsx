@@ -1,7 +1,9 @@
 import {View, TextInput, StyleSheet} from 'react-native';
 import {Icon} from '../../assets/icons';
+import {useTheme} from '@react-navigation/native';
 
 export default function CustomSearchBar() {
+  const {colors} = useTheme();
   return (
     <View>
       <Icon
@@ -9,7 +11,11 @@ export default function CustomSearchBar() {
         name="search"
         size={21}
       />
-      <TextInput style={styles.searchBar} placeholder="Search genres ..." />
+      <TextInput
+        style={{...styles.searchBar}}
+        placeholderTextColor={colors.primary}
+        placeholder="Search genres ..."
+      />
     </View>
   );
 }
