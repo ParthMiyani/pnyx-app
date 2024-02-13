@@ -1,27 +1,28 @@
-import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import SwipeButton from 'rn-swipe-button';
-// import {Icon} from '../assets/icons/index';
-import ICONS from '../assets/icons/icons';
+import {Icon} from '../assets/icons';
 
 export default function WelcomeScreenSwipeButton(porps: any) {
   return (
     <View style={styles.container}>
       <SwipeButton
         onSwipeSuccess={porps.onSwipeSuccess}
+        height={60}
+        width={310}
         railBorderColor="#FFFFFF"
-        railFillBorderColor="rgba(0, 0, 0, 0)"
+        railFillBorderColor="transparent"
         railFillBackgroundColor="#FFFFFF"
-        railBackgroundColor="rgba(0, 0, 0, 0)"
+        railBackgroundColor="transparent"
         // TODO: Fix when swipe button library is updated
         // @ts-ignore
         thumbIconComponent={() => {
-          return <ICONS.voice />;
+          return <Icon name="voice" size={24} />;
         }}
         thumbIconBackgroundColor="#FFFFFF"
-        thumbIconBorderColor="rgba(0, 0, 0, 0)"
+        thumbIconBorderColor="transparent"
         title="Start Listening"
         titleColor="#FFFFFF"
+        titleFontSize={17}
       />
     </View>
   );
@@ -30,6 +31,6 @@ export default function WelcomeScreenSwipeButton(porps: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    padding: 15,
   },
 });

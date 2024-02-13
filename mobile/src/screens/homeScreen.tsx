@@ -5,7 +5,7 @@ import AppHeader from '../components/appHeader';
 import CustomBackground from '../components/customBackground';
 import CustomSearchBar from '../components/uiComponents/customSearchBar';
 
-export default function GenresScreen({navigation}: {navigation: any}) {
+export default function HomeScreen() {
   const {colors} = useTheme();
 
   return (
@@ -15,24 +15,12 @@ export default function GenresScreen({navigation}: {navigation: any}) {
       </View>
       <View style={{...styles.container}}>
         <AppHeader
-          iconNameLeft="left-arrow"
-          // TODO: icon right in temprary
-          iconNameRight="right-arrow"
-          title="Choose some genres"
-          onTouchLeft={() => {
-            navigation.goBack();
-          }}
-          // TODO: icon right in temprary
-          onTouchRight={() => {
-            navigation.navigate('Artist');
-          }}
+          iconNameLeft="eye-star"
+          iconNameRight="options"
+          title="Discover"
+          onTouchLeft={() => {}}
+          onTouchRight={() => {}}
         />
-        <Text style={{...styles.subText, color: colors.primary}}>
-          Select a minimum of 4 tracks or more {'\n'} so we can generate a
-          playlist for you
-        </Text>
-        <Image style={styles.cube} source={images.cubeImage} />
-        <CustomSearchBar />
       </View>
     </View>
   );
