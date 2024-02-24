@@ -1,0 +1,19 @@
+
+.input-style {
+    width: 90vw;
+    height: 77px;
+    border-radius: 48px;
+    border: #FFFFFF 2px solid;
+    background:rgba(255,255,255,0);
+    color: #FFFFFF;
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .email-input{
+    margin: 10px;
+  }
+  
+  .button-style {
+    margin-top: 20vh;
+  }
