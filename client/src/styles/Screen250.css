@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 .screenBackground {
-  height: 102vh;
-  background: radial-gradient(
+  height: 100vh;
+  width: 100vw;
+  /* background: radial-gradient(
       circle at 110% 10%,
       rgba(137, 142, 255, 0.4) 4%,
       transparent 30%
@@ -23,13 +24,12 @@
       transparent 35%
     );
 
-  background-color: black;
+  background-color: black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  font-family: "DM Sans", sans-serif;
   color: #f1f1f1;
 }
 

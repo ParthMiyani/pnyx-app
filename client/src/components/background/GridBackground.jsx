@@ -1,10 +1,7 @@
 import React from "react";
-import "./gridBackground.css";
+import "../../styles/background/gridBackground.css";
 
 const GridBackground = (props) => {
-  //   let count = 0;
-  //   let width = "0px";
-  //   let height = "0px";
   return (
     <div className="perent" style={{ rotate: props.rotate }}>
       <div

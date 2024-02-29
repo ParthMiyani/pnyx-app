@@ -8,12 +8,18 @@ import WifiIcon from "@mui/icons-material/Wifi";
 import PauseIcon from "@mui/icons-material/Pause";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import TouchAppOutlinedIcon from "@mui/icons-material/TouchAppOutlined";
+import BackButton from "./screen251/ForwardButton";
+import ForwardButton from "./screen251/ForwardButton";
+import LogoutIcon from "@mui/icons-material/Logout";
+import IconButton from "@mui/material/IconButton";
+import { useDisconnect } from "@thirdweb-dev/react";
 
 function Screen248() {
+  const disconnect = useDisconnect();
   return (
     <div className="container248">
       <div className="player">
-        <div className="top">
+        {/* <div className="top">
           <div className="top-left">
             <span>9:41</span>
           </div>
@@ -22,13 +28,19 @@ function Screen248() {
             <WifiIcon className="top-icon" fontSize="small" />
             <BatteryFullIcon className="top-icon" fontSize="small" />
           </div>
-        </div>
+        </div> */}
         <div className="content">
           <div className="oval">
             <VisibilityOutlinedIcon className="icon" />
             <div className="page-indicator">1/5</div>
           </div>
           <p className="title">Discover</p>
+          <div className="right-oval">
+            {/* <ForwardButton /> */}
+            <IconButton aria-label="logout" onClick={disconnect}>
+              <LogoutIcon className="icon" />
+            </IconButton>
+          </div>
         </div>
         <PlayerControls />
       </div>
