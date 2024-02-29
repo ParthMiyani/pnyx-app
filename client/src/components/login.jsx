@@ -1,12 +1,13 @@
 import { React, useState, useEffect } from "react";
-import "./login.css";
+import "../styles/login.css";
 import {
   useWallet,
   useConnectionStatus,
   useAddress,
   useDisconnect,
 } from "@thirdweb-dev/react";
-import LoginWithEmail from "./loginWithEmail";
+import LoginWithEmail from "./LoginWithEmail";
+import { Link, Outlet } from "react-router-dom";
 
 function Login() {
   const address = useAddress();
@@ -28,11 +29,10 @@ function Login() {
       <div className="sub-text">REFERRED BY TAYLOR SWIFT</div>
       {address ? (
         <>
-          <h3>Connected as {email}</h3>
-          <p>Your wallet: {address}</p>
-          <button className="input-style login-button" onClick={disconnect}>
-            Log out
-          </button>
+          <Link to="/choose-artists">
+            <button className="input-style login-button">Continue</button>
+          </Link>
+          <Outlet />
         </>
       ) : (
         <>
@@ -41,7 +41,7 @@ function Login() {
               <LoginWithEmail />
             </>
           ) : (
-            <div className="" /> // create lodding page.
+            <div className="" /> // TODO: add lodding page.
           )}
         </>
       )}

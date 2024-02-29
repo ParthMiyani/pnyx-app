@@ -1,5 +1,7 @@
 import { React, useState } from "react";
 import { useEmbeddedWallet } from "@thirdweb-dev/react";
+import "../styles/loginWithEmail.css";
+import { Link, Outlet } from "react-router-dom";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -78,12 +80,16 @@ export default function LoginWithEmail() {
         <div>
           {error === "enter verification code" ? "Please enter a code" : ""}
         </div>
-        <button
-          className="input-style button-style"
-          onClick={handleEmailVerification}
-        >
-          Verify
-        </button>
+        <Link to="/choose-artists">
+          <button
+            className="input-style button-style"
+            onClick={handleEmailVerification}
+          >
+            Verify
+          </button>
+        </Link>
+        <Outlet />
+
         <button
           className="input-style button-style"
           onClick={() => setState("init")}
