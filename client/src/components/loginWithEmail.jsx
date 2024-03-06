@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { useEmbeddedWallet } from "@thirdweb-dev/react";
 import "../styles/loginWithEmail.css";
 import { Link, Outlet } from "react-router-dom";
+import BorderButton from "../components/ui/BorderButton";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -46,15 +47,8 @@ export default function LoginWithEmail() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <p>{error === "enter email" ? "Please enter an email" : ""}</p>
-        <button
-          className="input-style button-style"
-          onClick={handleEmailEntered}
-        >
-          Continue
-        </button>
-        {/* <a onClick={() => setState("init")}>
-          <p>Go Back</p>
-        </a> */}
+        <BorderButton title="Continue" onClick={handleEmailEntered} />
+        <BorderButton title="Go Back" onClick={() => setState("init")} />
       </>
     );
   }
@@ -81,30 +75,17 @@ export default function LoginWithEmail() {
           {error === "enter verification code" ? "Please enter a code" : ""}
         </div>
         <Link to="/choose-artists">
-          <button
-            className="input-style button-style"
-            onClick={handleEmailVerification}
-          >
-            Verify
-          </button>
+          <BorderButton title="Verify" onClick={handleEmailVerification} />
         </Link>
         <Outlet />
-
-        <button
-          className="input-style button-style"
-          onClick={() => setState("init")}
-        >
-          Go Back
-        </button>
+        <BorderButton title="Go Back" onClick={() => setState("init")} />
       </>
     );
   }
 
   return (
     <div>
-      <button className="input-style button-style" onClick={handleEmailClicked}>
-        Log In With Email
-      </button>
+      <BorderButton title="Log In With Email" onClick={handleEmailClicked} />
     </div>
   );
 }

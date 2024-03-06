@@ -3,8 +3,10 @@ import React from "react";
 import "../styles/Screen250.css";
 import tempImage from "./tempImage.webp";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Link, useNavigate } from "react-router-dom";
 
 function Screen255() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="screenBackground">
@@ -37,7 +39,7 @@ function Screen255() {
               </p>
             </div>
           </div>
-          <button>Purchased</button>
+          <button onClick={() => navigate(-1)}>Purchased</button>
         </div>
       </div>
     </>

@@ -1,16 +1,15 @@
 import Login from "./Login";
-import { Outlet } from "react-router-dom";
+import { useOutlet } from "react-router-dom";
 import { useAddress } from "@thirdweb-dev/react";
-import Screen251 from "./screen251/Screen251";
+import Screen248 from "./Screen248";
 
 const Home = () => {
   const address = useAddress();
+  const outlet = useOutlet();
   return (
     <>
       {address ? (
-        <>
-          <Outlet />
-        </>
+        <>{outlet || <Screen248 />}</>
       ) : (
         <>
           <Login />

@@ -1,17 +1,16 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/login.css";
 import {
   useWallet,
   useConnectionStatus,
   useAddress,
-  useDisconnect,
 } from "@thirdweb-dev/react";
 import LoginWithEmail from "./LoginWithEmail";
 import { Link, Outlet } from "react-router-dom";
+import BorderButton from "../components/ui/BorderButton";
 
 function Login() {
   const address = useAddress();
-  const disconnect = useDisconnect();
   const connectedWallet = useWallet("embeddedWallet");
   const [email, setEmail] = useState("");
   const connectionStatus = useConnectionStatus();
@@ -30,7 +29,7 @@ function Login() {
       {address ? (
         <>
           <Link to="/choose-artists">
-            <button className="input-style login-button">Continue</button>
+            <BorderButton title="Continue" />
           </Link>
           <Outlet />
         </>

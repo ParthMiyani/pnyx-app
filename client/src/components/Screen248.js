@@ -13,22 +13,14 @@ import ForwardButton from "./screen251/ForwardButton";
 import LogoutIcon from "@mui/icons-material/Logout";
 import IconButton from "@mui/material/IconButton";
 import { useDisconnect } from "@thirdweb-dev/react";
+import { Link } from "react-router-dom";
 
 function Screen248() {
   const disconnect = useDisconnect();
+
   return (
     <div className="container248">
       <div className="player">
-        {/* <div className="top">
-          <div className="top-left">
-            <span>9:41</span>
-          </div>
-          <div className="top-right">
-            <SignalCellularAltIcon className="top-icon" fontSize="small" />
-            <WifiIcon className="top-icon" fontSize="small" />
-            <BatteryFullIcon className="top-icon" fontSize="small" />
-          </div>
-        </div> */}
         <div className="content">
           <div className="oval">
             <VisibilityOutlinedIcon className="icon" />
@@ -51,10 +43,12 @@ function Screen248() {
 function PlayerControls() {
   return (
     <div className="player-controls">
-      <div className="tap">
-        <TouchAppOutlinedIcon fontSize="large" />
-        <p>Tap to Reveal</p>
-      </div>
+      <Link to={"/buy-song-player"}>
+        <div className="tap">
+          <TouchAppOutlinedIcon fontSize="large" />
+          <p>Tap to Reveal</p>
+        </div>
+      </Link>
       <div className="progress-bar">
         <div className="bar">
           <span></span>

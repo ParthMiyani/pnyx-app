@@ -3,8 +3,10 @@ import React from "react";
 import "../styles/Screen250.css";
 import tempImage from "./tempImage.webp";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Link, useNavigate } from "react-router-dom";
 
 function Screen250() {
+  // const navigate = useNavigate();
   return (
     <>
       <div className="screenBackground">
@@ -18,13 +20,13 @@ function Screen250() {
           </p>
           <h3>Offichain benefits</h3>
           <div className="description">
-            <CheckCircleIcon style={{color: '#e5cffe'}}/> 
-            <p> VIP</p> 
+            <CheckCircleIcon style={{ color: "#e5cffe" }} />
+            <p> VIP</p>
             <p className="subText">Token Holder</p>
           </div>
           <div className="description">
-            <CheckCircleIcon style={{color: '#e5cffe'}}/> 
-            <p>Exclusive</p> 
+            <CheckCircleIcon style={{ color: "#e5cffe" }} />
+            <p>Exclusive</p>
             <p className="subText">Drop & Events</p>
           </div>
         </div>
@@ -43,7 +45,9 @@ function Screen250() {
               <p className="buySubContent">$108</p>
             </div>
           </div>
-          <button>Buy This Song</button>
+          <Link to={-1} state={{ key: true }}>
+            <button>Buy This Song</button>
+          </Link>
         </div>
       </div>
     </>

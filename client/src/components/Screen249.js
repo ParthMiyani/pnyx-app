@@ -1,21 +1,35 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "../styles/Screen249.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PauseIcon from "@mui/icons-material/Pause";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
+import BorderButton from "../components/ui/BorderButton";
+import BackButton from "./screen251/BackButton";
+import { Link, useLocation } from "react-router-dom";
 
 function Screen249() {
+  const [isSongBought, setIsSongBought] = useState(false);
+  const { state } = useLocation();
+
+  useEffect(() => {
+    console.log(state);
+    if (state?.key) {
+      setIsSongBought(state?.key);
+    }
+  }, [state]);
+
   return (
     <div className="container249">
       <div className="player249">
         <div className="content249">
+          <BackButton />
+          <p className="title249">Discover</p>
           <div className="oval249">
             <VisibilityOutlinedIcon className="icon249" />
             <div className="page-indicator249">1/5</div>
           </div>
-          <p className="title249">Discover</p>
         </div>
         <div className="artist-image-container249">
           <div className="artist-image249">
@@ -25,7 +39,9 @@ function Screen249() {
           <p>Taylor Swift</p>
         </div>
         <PlayerControls />
-        <BuyOptionButton />
+        <Link to={isSongBought ? "/purchased-song" : "/song-cart"}>
+          <BorderButton title={isSongBought ? "Purchased" : "Buy Now"} />
+        </Link>
       </div>
     </div>
   );
@@ -55,16 +71,6 @@ function PlayerControls() {
         <button>
           <SkipNextIcon fontSize="large" />
         </button>
-      </div>
-    </div>
-  );
-}
-
-function BuyOptionButton() {
-  return (
-    <div className="buy-button-container249">
-      <div className="buy-button249">
-        <button>Buy Now</button>
       </div>
     </div>
   );

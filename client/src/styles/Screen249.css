@@ -6,7 +6,7 @@
 }
 
 .player249 {
-  background: radial-gradient(
+  /* background: radial-gradient(
       circle at 110% 10%,
       rgba(137, 142, 255, 0.4) 4%,
       transparent 30%
@@ -26,7 +26,7 @@
       rgba(139, 19, 144, 1) 0.1%,
       transparent 35%
     );
-  background-color: black;
+  background-color: black; */
   color: white;
   height: 100vh;
   display: flex;
@@ -35,19 +35,16 @@
 }
 
 .content249 {
-  font-family: "DM Sans", sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   text-align: center;
-  padding: 1rem;
+  padding-top: 1rem;
   /* padding-bottom: 95%; */
 }
 
 .oval249 {
-  position: absolute;
-  left: 1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
