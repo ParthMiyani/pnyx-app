@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/background/gridBackground.css";
+import "../../../styles/ui/background/gridBackground.css";
 
 const GridBackground = (props) => {
   return (

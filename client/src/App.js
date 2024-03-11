@@ -2,8 +2,8 @@ import "./App.css";
 import { ThirdwebProvider, embeddedWallet } from "@thirdweb-dev/react";
 import { RouterProvider } from "react-router-dom";
 import appRouter from "./components/route/AppRoute";
-import Background from "./components/background/Background";
-import "./styles/background/background.css";
+import Background from "./components/ui/background/Background";
+import "./styles/ui/background/background.css";
 
 const activeChain = "ethereum";
 

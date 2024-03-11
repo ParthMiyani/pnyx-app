@@ -5,7 +5,7 @@ import {
   useConnectionStatus,
   useAddress,
 } from "@thirdweb-dev/react";
-import LoginWithEmail from "./LoginWithEmail";
+import LoginWithEmail from "./loginWithEmail";
 import { Link, Outlet } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
 
