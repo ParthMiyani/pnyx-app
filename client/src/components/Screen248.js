@@ -29,9 +29,11 @@ function Screen248() {
           <p className="title">Discover</p>
           <div className="right-oval">
             {/* <ForwardButton /> */}
-            <IconButton aria-label="logout" onClick={disconnect}>
-              <LogoutIcon className="icon" />
-            </IconButton>
+            <Link to={"/login"}>
+              <IconButton aria-label="logout">
+                <LogoutIcon className="icon" />
+              </IconButton>
+            </Link>
           </div>
         </div>
         <PlayerControls />

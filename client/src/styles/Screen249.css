@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 .container249 {
-  margin: 0;
+  margin-top: 4rem;
   padding: 0;
 }
 
@@ -54,6 +54,15 @@
   border-radius: 40px;
   color: white;
   font-size: 14px;
+}
+
+.title249 {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  position: fixed; /* Position fixed to keep it centered even when scrolling */
+  right: 0;
+  left: 0;
 }
 
 .icon249 {

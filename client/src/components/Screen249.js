@@ -24,12 +24,12 @@ function Screen249() {
     <div className="container249">
       <div className="player249">
         <div className="content249">
-          <BackButton />
-          <p className="title249">Discover</p>
+          {/* <BackButton /> */}
           <div className="oval249">
             <VisibilityOutlinedIcon className="icon249" />
             <div className="page-indicator249">1/5</div>
           </div>
+          <p className="title249">Discover</p>
         </div>
         <div className="artist-image-container249">
           <div className="artist-image249">

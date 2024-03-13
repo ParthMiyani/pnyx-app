@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { useEmbeddedWallet } from "@thirdweb-dev/react";
 import "../styles/loginWithEmail.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
 
 export default function LoginWithEmail() {
@@ -10,6 +10,7 @@ export default function LoginWithEmail() {
   const [state, setState] = useState("init"); // "init" | "emter_email" | "sending_email" | "email_verification"
   const [verificationCode, setVerificationCode] = useState("");
   const { connect, sendVerificationEmail } = useEmbeddedWallet();
+  const navigate = useNavigate();
 
   const handleEmailClicked = async () => {
     setState("emter_email");
@@ -30,7 +31,9 @@ export default function LoginWithEmail() {
       setError("enter verification code");
       return;
     }
-    await connect({ strategy: "email_verification", email, verificationCode });
+    // await connect({ strategy: "email_verification", email, verificationCode });
+    // Navigate to the '/choose-artists' page after verification
+    navigate("/choose-artists");
   };
 
   if (state === "emter_email") {
@@ -77,7 +80,7 @@ export default function LoginWithEmail() {
         <Link to="/choose-artists">
           <BorderButton title="Verify" onClick={handleEmailVerification} />
         </Link>
-        <Outlet />
+        <Outlet /> 
         <BorderButton title="Go Back" onClick={() => setState("init")} />
       </>
     );

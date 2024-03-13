@@ -5,6 +5,7 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PauseIcon from "@mui/icons-material/Pause";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
+import { Link } from "react-router-dom";
 
 function Screen254() {
   return (
@@ -62,11 +63,11 @@ function PlayerControls() {
 
 function BuyOptionButton() {
   return (
-    <div className="buy-button-container249">
+    <Link to={"/purchased-song"} className="buy-button-container249">
       <div className="buy-button249">
         <button>Purchased</button>
       </div>
-    </div>
+    </Link>
   );
 }
 
