@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "../styles/Screen249.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
 import { Link } from "react-router-dom";
 
 function Screen254() {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+
+  const togglePlayPause = () => {
+    setIsPlaying(prevValue => {
+      if (!prevValue) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+      return !prevValue;
+    });
+  };
+
   return (
     <div className="container249">
       <div className="player249">
@@ -25,14 +41,14 @@ function Screen254() {
           <h3>Begin Again</h3>
           <p>Taylor Swift</p>
         </div>
-        <PlayerControls />
+        <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause}  />
         <BuyOptionButton />
       </div>
     </div>
   );
 }
 
-function PlayerControls() {
+function PlayerControls({ isPlaying, togglePlayPause }) {
   return (
     <div className="player-controls">
       <div className="progress-bar">
@@ -49,8 +65,8 @@ function PlayerControls() {
           <SkipPreviousIcon fontSize="large" />
         </button>
         <div className="circle">
-          <button>
-            <PauseIcon fontSize="large" className="pause" />
+          <button className="Pause-Play" onClick={togglePlayPause}>
+              {isPlaying ? <PauseIcon fontSize="large" className="pause" /> : <PlayArrowIcon fontSize="large" className="play" />}
           </button>
         </div>
         <button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef }  from "react";
 import "../styles/Screen248.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
@@ -6,16 +6,30 @@ import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import BatteryFullIcon from "@mui/icons-material/BatteryFull";
 import WifiIcon from "@mui/icons-material/Wifi";
 import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import TouchAppOutlinedIcon from "@mui/icons-material/TouchAppOutlined";
-import BackButton from "./Screen251/ForwardButton";
-import ForwardButton from "./Screen251/ForwardButton";
 import LogoutIcon from "@mui/icons-material/Logout";
 import IconButton from "@mui/material/IconButton";
 import { useDisconnect } from "@thirdweb-dev/react";
 import { Link } from "react-router-dom";
 
 function Screen248() {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+
+  const togglePlayPause = () => {
+    setIsPlaying(prevValue => {
+      if (!prevValue) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+      return !prevValue;
+    });
+  };
+
   const disconnect = useDisconnect();
 
   return (
@@ -36,13 +50,13 @@ function Screen248() {
             </Link>
           </div>
         </div>
-        <PlayerControls />
+        <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause} />
       </div>
     </div>
   );
 }
 
-function PlayerControls() {
+function PlayerControls({ isPlaying, togglePlayPause }) {
   return (
     <div className="player-controls">
       <Link to={"/buy-song-player"}>
@@ -65,8 +79,8 @@ function PlayerControls() {
           <SkipPreviousIcon fontSize="large" />
         </button>
         <div className="circle">
-          <button>
-            <PauseIcon fontSize="large" className="pause" />
+          <button className="Pause-Play" onClick={togglePlayPause}>
+            {isPlaying ? <PauseIcon fontSize="large" className="pause" /> : <PlayArrowIcon fontSize="large" className="play" />}
           </button>
         </div>
         <button>
