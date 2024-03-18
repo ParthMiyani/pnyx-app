@@ -1,4 +1,4 @@
-import Login from "./Login";
+import Login from "./login";
 import { useOutlet } from "react-router-dom";
 import { useAddress } from "@thirdweb-dev/react";
 import Screen248 from "./Screen248";

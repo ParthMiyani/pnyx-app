@@ -6,7 +6,7 @@ import PauseIcon from "@mui/icons-material/Pause";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
 import BorderButton from "../components/ui/BorderButton";
-import BackButton from "./screen251/BackButton";
+import BackButton from "./Screen251/BackButton";
 import { Link, useLocation } from "react-router-dom";
 
 function Screen249() {

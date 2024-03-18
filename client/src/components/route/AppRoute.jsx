@@ -4,8 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "../Home";
-import Login from "../Login";
-import Screen251 from "../screen251/Screen251";
+import Login from "../login";
+import Screen251 from "../Screen251/Screen251";
 import Screen248 from "../Screen248";
 import Screen249 from "../Screen249";
 import Screen250 from "../Screen250";
