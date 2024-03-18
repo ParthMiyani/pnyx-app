@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/Screen249.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
@@ -7,11 +7,36 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
 import { Link } from "react-router-dom";
+import { useUserID } from "./context/UserIDContext";
 
 function Screen254() {
-
+  const [userData, setUserData] = useState(null); // State to hold user data
+  const { userID } = useUserID();
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/users/${userID}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        const userData = await response.json();
+        setUserData(userData);
+        console.log(userData);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchData();
+
+    // Cleanup function
+    return () => {
+      // Any cleanup code if needed
+    };
+  }, [userID]); // Fetch data whenever userID changes
 
   const togglePlayPause = () => {
     setIsPlaying(prevValue => {
@@ -30,7 +55,7 @@ function Screen254() {
         <div className="content249">
           <div className="oval249">
             <VisibilityOutlinedIcon className="icon249" />
-            <div className="page-indicator249">1/5</div>
+            <div className="page-indicator249">{userData && userData.views_left}/5</div>
           </div>
           <p className="title249">Discover</p>
         </div>
