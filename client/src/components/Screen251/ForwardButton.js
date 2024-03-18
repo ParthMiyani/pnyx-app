@@ -12,9 +12,9 @@ const StyledIconButton = styled(IconButton)({
 
 const ForwardButton = () => {
   return (
-    <Link to={"/hidden-player"}>
+    <Link to={"/generating-playlist"}>
       <StyledIconButton color="inherit">
-        <ArrowForwardIcon />
+        <ArrowForwardIcon style={{ color: "white" }} />
       </StyledIconButton>
     </Link>
   );

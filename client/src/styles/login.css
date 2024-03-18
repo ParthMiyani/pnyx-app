@@ -2,7 +2,6 @@
   display: flex;
   place-items: center;
   flex-direction: column;
-  justify-content: top;
   height: 100vh;
   background-color: rgba(0,0,0,0);
 }
@@ -15,8 +14,8 @@
 .second {
 	z-index: 2;
 	position: absolute;
-	top: 12.5vh;
-  font-size: 6em;
+	top: 14vh;
+  	font-size: 6em;
 }
 
 .title-text {
@@ -57,9 +56,5 @@
 }
 
 .email-input{
-  margin-top: 20vh;
-}
-
-.login-button {
   margin-top: 20vh;
 }
