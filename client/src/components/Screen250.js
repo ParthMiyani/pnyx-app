@@ -45,7 +45,7 @@ function Screen250() {
               <p className="buySubContent">$108</p>
             </div>
           </div>
-          <Link to={-1} state={{ key: true }}>
+          <Link to={"/purchased-song-player"} state={{ key: true }}>
             <button>Buy This Song</button>
           </Link>
         </div>

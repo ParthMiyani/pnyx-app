@@ -1,8 +1,9 @@
 import { React, useState } from "react";
 import { useEmbeddedWallet } from "@thirdweb-dev/react";
 import "../styles/loginWithEmail.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
+import { useUserID } from "./context/UserIDContext";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,8 @@ export default function LoginWithEmail() {
   const [state, setState] = useState("init"); // "init" | "emter_email" | "sending_email" | "email_verification"
   const [verificationCode, setVerificationCode] = useState("");
   const { connect, sendVerificationEmail } = useEmbeddedWallet();
+  const navigate = useNavigate();
+  const { userID, setUserID } = useUserID();
 
   const handleEmailClicked = async () => {
     setState("emter_email");
@@ -20,9 +23,35 @@ export default function LoginWithEmail() {
       setError("enter email");
       return;
     }
+    
+    try {
+      // Send POST request to the specified URL with email as payload
+      // artist_id hardcoded for now
+      const response = await fetch("https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, artist_id: 1 })
+        
+      })
+  
+      if (!response.ok) {
+        throw new Error("Failed to send verification email");
+      }
+      // Parse the response body as JSON and save userID for future use
+      const responseData = await response.json();
+      setUserID(responseData['userID']);
+      console.log(responseData);
+
+  
+    } catch (error) {
+      console.error("Error sending verification email:", error);
+    }
     setState("sending_email");
     await sendVerificationEmail({ email });
     setState("email_verification");
+    
   };
 
   const handleEmailVerification = async () => {
@@ -30,7 +59,9 @@ export default function LoginWithEmail() {
       setError("enter verification code");
       return;
     }
-    await connect({ strategy: "email_verification", email, verificationCode });
+    // await connect({ strategy: "email_verification", email, verificationCode });
+    // Navigate to the '/choose-artists' page after verification
+    navigate("/choose-artists");
   };
 
   if (state === "emter_email") {
@@ -77,7 +108,7 @@ export default function LoginWithEmail() {
         <Link to="/choose-artists">
           <BorderButton title="Verify" onClick={handleEmailVerification} />
         </Link>
-        <Outlet />
+        <Outlet /> 
         <BorderButton title="Go Back" onClick={() => setState("init")} />
       </>
     );
