@@ -28,7 +28,7 @@ function Login() {
       <div className="sub-text">REFERRED BY TAYLOR SWIFT</div>
       {address ? (
         <>
-          <Link to="/choose-artists">
+          <Link to="/25-pnyx/choose-artists">
             <BorderButton title="Continue" />
           </Link>
           <Outlet />

@@ -61,7 +61,7 @@ export default function LoginWithEmail() {
     }
     // await connect({ strategy: "email_verification", email, verificationCode });
     // Navigate to the '/choose-artists' page after verification
-    navigate("/choose-artists");
+    navigate("/25-pnyx/choose-artists");
   };
 
   if (state === "emter_email") {
@@ -105,7 +105,7 @@ export default function LoginWithEmail() {
         <div>
           {error === "enter verification code" ? "Please enter a code" : ""}
         </div>
-        <Link to="/choose-artists">
+        <Link to="/25-pnyx/choose-artists">
           <BorderButton title="Verify" onClick={handleEmailVerification} />
         </Link>
         <Outlet /> 

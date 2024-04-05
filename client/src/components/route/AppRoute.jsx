@@ -16,15 +16,15 @@ import Screen255 from "../Screen255";
 const appRouter = createBrowserRouter(
   createRoutesFromElements(
     <>
-    <Route path="/" element={<Home />} />
-    <Route index path="/login" element={<Login />} />
-    <Route path="/choose-artists" element={<Screen251 />} />
-    <Route path="/generating-playlist" element={<Screen253 />} />
-    <Route path="/hidden-player" element={<Screen248 />} />
-    <Route path="/buy-song-player" element={<Screen249 />} />
-    <Route path="/song-cart" element={<Screen250 />} />
-    <Route path="/purchased-song-player" element={<Screen254 />} />
-    <Route path="/purchased-song" element={<Screen255 />} />
+    <Route path="/25-pnyx" element={<Home />} />
+    <Route index path="/25-pnyx/login" element={<Login />} />
+    <Route path="/25-pnyx/choose-artists" element={<Screen251 />} />
+    <Route path="/25-pnyx/generating-playlist" element={<Screen253 />} />
+    <Route path="/25-pnyx/hidden-player" element={<Screen248 />} />
+    <Route path="/25-pnyx/buy-song-player" element={<Screen249 />} />
+    <Route path="/25-pnyx/song-cart" element={<Screen250 />} />
+    <Route path="/25-pnyx/purchased-song-player" element={<Screen254 />} />
+    <Route path="/25-pnyx/purchased-song" element={<Screen255 />} />
   </>
   )
 );

@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <ThirdwebProvider
         activeChain={activeChain}
-        clientId={process.env.REACT_APP_THIRDWEB_CLIENT_ID}
+        clientId="c0fb0959b554df8179142718dfaa8764"
         supportedWallets={[embeddedWallet()]}
       >
         <Background />

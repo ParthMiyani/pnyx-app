@@ -1,10 +1,7 @@
-import React, { useState, useRef, useEffect }  from "react";
+import React, { useState, useRef, useEffect, useContext} from "react";
 import "../styles/Screen248.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
-import BatteryFullIcon from "@mui/icons-material/BatteryFull";
-import WifiIcon from "@mui/icons-material/Wifi";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -14,23 +11,52 @@ import IconButton from "@mui/material/IconButton";
 import { useDisconnect } from "@thirdweb-dev/react";
 import { Link } from "react-router-dom";
 import { useUserID } from "./context/UserIDContext";
+import { useData } from "./context/SonglistContext";
+import { useSelectedSong } from "./context/SelectedSongsContext";
+import getSelectedSong from "./songProvider";
 
 function Screen248() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [userData, setUserData] = useState(null); // State to hold user data
   const { userID } = useUserID();
-  const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+  const audioRef = useRef(null);
+  const { responseData } = useData(); // Access responseData from the context
+  const { setSelectedSong } = useSelectedSong(); // Access setSelectedSong from the context
+  const [selectedSongLoaded, setSelectedSongLoaded] = useState(false); // State to track if selected song is loaded
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/users/${userID}`);
+        const response = await fetch(
+          `https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/users/${userID}`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
         }
         const userData = await response.json();
         setUserData(userData);
         console.log(userData);
+
+        // Fetch audio URL when userData is fetched
+        const audioResponse = await fetch("https://25-pnyx-clyvyprrn-vidhip30s-projects.vercel.app/get_audio_url", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            track_title: responseData.recommendations[0], // Assuming recommendations exist in userData
+          }),
+        });
+        if (!audioResponse.ok) {
+          throw new Error("Failed to fetch audio URL");
+        }
+        const { songList, track } = await audioResponse.json();
+        const songListAsNumber = parseInt(songList, 10);
+        const selectedSong = getSelectedSong(songListAsNumber, track-1);
+        console.log(selectedSong)
+        setSelectedSong(selectedSong); // Set the selected song in the context
+        audioRef.current = new Audio(selectedSong.audioUrl);
+        setSelectedSongLoaded(true); // Set selectedSongLoaded to true
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -45,14 +71,12 @@ function Screen248() {
   }, [userID]); // Fetch data whenever userID changes
 
   const togglePlayPause = () => {
-    setIsPlaying(prevValue => {
-      if (!prevValue) {
-        audioRef.current.play();
-      } else {
-        audioRef.current.pause();
-      }
-      return !prevValue;
-    });
+    if (!isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+    setIsPlaying((prevValue) => !prevValue);
   };
 
   const disconnect = useDisconnect();
@@ -63,34 +87,87 @@ function Screen248() {
         <div className="content">
           <div className="oval">
             <VisibilityOutlinedIcon className="icon" />
-            <div className="page-indicator">{userData && userData.views_left}/5</div>
+            <div className="page-indicator">
+              {userData && userData.views_left}/5
+            </div>
           </div>
           <p className="title">Discover</p>
           <div className="right-oval">
             {/* <ForwardButton /> */}
-            <Link to={"/login"}>
+            <Link to={"/25-pnyx/login"}>
               <IconButton aria-label="logout">
                 <LogoutIcon className="icon" />
               </IconButton>
             </Link>
           </div>
         </div>
-        <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause} />
+        {selectedSongLoaded && <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause} />}
       </div>
     </div>
   );
 }
 
-function PlayerControls({ isPlaying, togglePlayPause }) {
+function PlayerControls({ isPlaying, togglePlayPause}) {
+  const { selectedSong } = useSelectedSong(); // Access the selectedSong from the context
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    const formattedMinutes = String(minutes).padStart(2, "0"); // Ensure two digits for minutes
+    const formattedSeconds = String(remainingSeconds).padStart(2, "0"); // Ensure two digits for seconds
+    return `${formattedMinutes}:${formattedSeconds}`;
+  }
+
+  let songLength = selectedSong.audioDuration;
+  let songTimer = "00:00";
+  const [timer, setTimer] = useState(songTimer);
+
+  useEffect(() => {
+    let interval;
+
+    if (isPlaying) {
+      interval = setInterval(() => {
+        const [minutes, seconds] = timer.split(":").map(Number);
+
+        let remainingMinutes = minutes;
+        let remainingSeconds = seconds;
+
+        remainingSeconds++;
+
+        if (remainingSeconds > 59) {
+          remainingSeconds = 0;
+          remainingMinutes++;
+        }
+
+        const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+        const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+        const formattedTime = `${formattedMinutes}:${formattedSeconds}`;
+
+        if (formattedTime > formatTime(songLength)) {
+          setTimer("00:00");
+          return;
+        }
+
+        setTimer(formattedTime);
+      }, 1000);
+    }
+
+    return () => clearInterval(interval);
+  }, [isPlaying, timer, songLength]);
+
   const { userID } = useUserID();
   const handleTap = async () => {
     try {
-      const response = await fetch(`https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/users/${userID}/decrement-views-left`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json"
+      const response = await fetch(
+        `https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/users/${userID}/decrement-views-left`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-      });
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update views_left");
@@ -105,7 +182,7 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
 
   return (
     <div className="player-controls">
-      <Link to={"/buy-song-player"}>
+      <Link to={"/25-pnyx/buy-song-player"}>
         <div className="tap" onClick={handleTap}>
           <TouchAppOutlinedIcon fontSize="large" />
           <p>Tap to Reveal</p>
@@ -116,8 +193,8 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
           <span></span>
         </div>
         <div className="time">
-          <p>00:50</p>
-          <p className="end">03:20</p>
+          <p>{timer}</p>
+          <p className="end">{formatTime(songLength)}</p>
         </div>
       </div>
       <div className="buttons">
@@ -126,7 +203,11 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
         </button>
         <div className="circle">
           <button className="Pause-Play" onClick={togglePlayPause}>
-            {isPlaying ? <PauseIcon fontSize="large" className="pause" /> : <PlayArrowIcon fontSize="large" className="play" />}
+            {isPlaying ? (
+              <PauseIcon fontSize="large" className="pause" />
+            ) : (
+              <PlayArrowIcon fontSize="large" className="play" />
+            )}
           </button>
         </div>
         <button>

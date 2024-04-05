@@ -8,12 +8,23 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import tempImage from "./tempImage.webp";
 import { Link } from "react-router-dom";
 import { useUserID } from "./context/UserIDContext";
+import { useSelectedSong } from "./context/SelectedSongsContext";
 
 function Screen254() {
+  const { selectedSong } = useSelectedSong();
   const [userData, setUserData] = useState(null); // State to hold user data
   const { userID } = useUserID();
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+  const audioRef = useRef(null);
+  const [selectedSongLoaded, setSelectedSongLoaded] = useState(false); 
+  
+  // Ensure selectedSong is set before initializing audioRef
+  useEffect(() => {
+    if (selectedSong) {
+      audioRef.current = new Audio(selectedSong.audioUrl);
+      setSelectedSongLoaded(true);
+    }
+  }, [selectedSong]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +60,13 @@ function Screen254() {
     });
   };
 
+  let artistName = "";
+  if (selectedSong && selectedSong.artists && selectedSong.artists.length > 1) {
+    artistName = selectedSong.artists.join(", ");
+  } else if (selectedSong && selectedSong.artists && selectedSong.artists.length === 1) {
+    artistName = selectedSong.artists[0];
+  }
+
   return (
     <div className="container249">
       <div className="player249">
@@ -63,10 +81,10 @@ function Screen254() {
           <div className="artist-image249">
             <img src={tempImage} alt="Temporary Song Art" />
           </div>
-          <h3>Begin Again</h3>
-          <p>Taylor Swift</p>
+          <h3>{selectedSong && selectedSong.title}</h3>
+          <p>{artistName}</p>
         </div>
-        <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause}  />
+        {selectedSongLoaded && <PlayerControls isPlaying={isPlaying} togglePlayPause={togglePlayPause} />}
         <BuyOptionButton />
       </div>
     </div>
@@ -74,6 +92,52 @@ function Screen254() {
 }
 
 function PlayerControls({ isPlaying, togglePlayPause }) {
+  const { selectedSong } = useSelectedSong();
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    const formattedMinutes = String(minutes).padStart(2, '0'); // Ensure two digits for minutes
+    const formattedSeconds = String(remainingSeconds).padStart(2, '0'); // Ensure two digits for seconds
+    return `${formattedMinutes}:${formattedSeconds}`;
+  }
+  let songLength = selectedSong.audioDuration;
+  let songTimer = "00:00";
+  const [timer, setTimer] = useState(songTimer);
+
+  useEffect(() => {
+    let interval;
+
+    if (isPlaying) {
+      interval = setInterval(() => {
+        const [minutes, seconds] = timer.split(":").map(Number);
+
+        let remainingMinutes = minutes;
+        let remainingSeconds = seconds;
+
+        remainingSeconds++;
+
+        if (remainingSeconds > 59) {
+          remainingSeconds = 0;
+          remainingMinutes++;
+        }
+
+        const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+        const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+        const formattedTime = `${formattedMinutes}:${formattedSeconds}`;
+
+        if (formattedTime > formatTime(songLength)) {
+          setTimer("00:00");
+          return;
+        }
+
+        setTimer(formattedTime);
+      }, 1000);
+    }
+
+    return () => clearInterval(interval);
+  }, [isPlaying, timer, songLength]);
+
   return (
     <div className="player-controls">
       <div className="progress-bar">
@@ -81,8 +145,8 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
           <span></span>
         </div>
         <div className="time">
-          <p>00:50</p>
-          <p className="end">03:20</p>
+          <p>{timer}</p>
+          <p className="end">{formatTime(songLength)}</p>
         </div>
       </div>
       <div className="buttons">
@@ -104,7 +168,7 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
 
 function BuyOptionButton() {
   return (
-    <Link to={"/purchased-song"} className="buy-button-container249">
+    <Link to={"/25-pnyx/purchased-song"} className="buy-button-container249">
       <div className="buy-button249">
         <button>Purchased</button>
       </div>

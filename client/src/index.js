@@ -4,12 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserIDProvider } from './components/context/UserIDContext';
+import { SonglistProvider } from './components/context/SonglistContext';
+import { SelectedSongProvider } from './components/context/SelectedSongsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserIDProvider>
-      <App />
+      <SonglistProvider>
+        <SelectedSongProvider>
+          <App />
+        </SelectedSongProvider>
+      </SonglistProvider>
     </UserIDProvider>
   </React.StrictMode>
 );

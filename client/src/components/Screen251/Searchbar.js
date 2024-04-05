@@ -31,39 +31,26 @@ const StyledTextField = styled(TextField)({
 
     // Hard code artist list for now
     const artistList = [
-        'Adele', 'Alicia Keys', 'Aretha Franklin',
-        'Beyoncé', 'Bob Dylan', 'Bruno Mars',
-        'Celine Dion', 'Coldplay', 'Cher',
-        'David Bowie', 'Dua Lipa', 'Drake',
-        'Elvis Presley', 'Ed Sheeran', 'Eminem',
-        'Frank Sinatra', 'Fleetwood Mac', 'Fergie',
-        'George Michael', 'Gwen Stefani', 'Green Day',
-        'Hozier', 'Halsey', 'Harry Styles',
-        'Imagine Dragons', 'Isaac Hayes', 'Iron Maiden',
-        'Janet Jackson', 'John Lennon', 'Justin Bieber',
-        'Katy Perry', 'Kanye West', 'Kendrick Lamar',
-        'Lady Gaga', 'Led Zeppelin', 'Lana Del Rey',
-        'Madonna', 'Michael Jackson', 'Miley Cyrus',
-        'Nirvana', 'Nat King Cole', 'Nicki Minaj',
-        'Oasis', 'Olivia Rodrigo', 'OutKast',
-        'Paul McCartney', 'Pink Floyd', 'Prince',
-        'Queen', 'Quincy Jones', 'Queen Latifah',
-        'Rihanna', 'Radiohead', 'Roberta Flack',
-        'Stevie Wonder', 'Shakira', 'Selena Gomez',
-        'Taylor Swift', 'The Beatles', 'The Rolling Stones',
-        'U2', 'Usher', 'Underworld',
-        'Vince Guaraldi', 'Van Halen', 'Van Morrison',
-        'Whitney Houston', 'The Weeknd', 'Weezer',
-        'X Japan', 'X Ambassadors',
-        'Yanni', 'Yo-Yo Ma', 'Yoko Ono',
-        'Zac Brown Band', 'Zayn Malik', 'ZZ Top'
+        "Come Through (feat. Ari G)", "Crazy", "Desperate",
+        "diversion", "Don't Be A Stranger", "Faceless",
+        "Haunted House", "Illusion (feat. Crunr)", "Let You Go",
+        "LONG NIGHT", "Maria (ft. Blooom & Ghost'n'Ghost)", "Omen",
+        "On & On (feat. Daniel Levi)", "Push The Gas", "Ruined My Life",
+        "Run & Hide", "SKY BRI", "Sleeping Till Noon",
+        "Somebody Like Me (feat. Halvorsen)", "Spotlight (feat. AWA)"
       ];
 
-const Searchbar = () => {
+const Searchbar = ( {setSelectedArtist } ) => {
   const [searchText, setSearchText] = useState('');
+
 
   const handleInputChange = (event, value) => {
     setSearchText(value || ''); // Set the search text to the selected value or an empty string
+  };
+
+  const handleArtistSelect = (event, value) => {
+    setSelectedArtist(value); // Set the selected artist when user selects an option
+    console.log("Selected song:", value); // Print the selected artist
   };
 
   return (
@@ -73,7 +60,7 @@ const Searchbar = () => {
         <StyledTextField
           {...params}
           variant="outlined"
-          placeholder="Search Artists ..."
+          placeholder="Search Songs ..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           InputProps={{
@@ -88,16 +75,18 @@ const Searchbar = () => {
       )}
       PaperComponent={({ children }) => (
         <div style={{ 
-            maxHeight: '200px', 
-            overflowY: 'auto', 
-            marginTop: '0px', 
-            backgroundColor:'white', 
-            }}>
+          maxHeight: '200px', 
+          overflowY: 'auto', 
+          marginTop: '0px', 
+          backgroundColor:'white', 
+        }}>
           {children}
         </div>
       )}
       style={{ width: '350px' }}
       onInputChange={handleInputChange}
+      onChange={handleArtistSelect} // Function to handle artist selection
+      // value={selectedArtist} // Set the selected value
       freeSolo
       selectOnFocus
       clearOnBlur

@@ -1,12 +1,55 @@
-// Screen250.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Screen250.css";
 import tempImage from "./tempImage.webp";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useSelectedSong } from "./context/SelectedSongsContext";
 
 function Screen250() {
-  // const navigate = useNavigate();
+  const { selectedSong } = useSelectedSong();
+  const [timer, setTimer] = useState(selectedSong.timeLeft);
+  const [isTimerExpired, setIsTimerExpired] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const [hours, minutes, seconds] = timer.split(":").map(Number);
+
+      let remainingHours = hours;
+      let remainingMinutes = minutes;
+      let remainingSeconds = seconds;
+
+      remainingSeconds--;
+
+      if (remainingSeconds < 0) {
+        remainingSeconds = 59;
+        remainingMinutes--;
+
+        if (remainingMinutes < 0) {
+          remainingMinutes = 59;
+          remainingHours--;
+
+          if (remainingHours < 0) {
+            clearInterval(interval);
+            setTimer("00:00:00");
+            setIsTimerExpired(true);
+            return;
+          }
+        }
+      }
+
+      const formattedHours = String(remainingHours).padStart(2, "0");
+      const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+      const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+      const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+      setTimer(formattedTime);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [timer]);
+
+  const price = selectedSong.price;
+
   return (
     <>
       <div className="screenBackground">
@@ -34,7 +77,7 @@ function Screen250() {
           <div className="buyDetails">
             <div className="buyContent">
               <p className="buyHeading">Ending In</p>
-              <p className="buySubContent">8h 41m 2s</p>
+              <p className="buySubContent">{timer}</p>
             </div>
             <div className="buyContent">
               <p className="buyHeading">Quantity</p>
@@ -42,11 +85,17 @@ function Screen250() {
             </div>
             <div className="buyContent">
               <p className="buyHeading">Price</p>
-              <p className="buySubContent">$108</p>
+              <p className="buySubContent">${price}</p>
             </div>
           </div>
-          <Link to={"/purchased-song-player"} state={{ key: true }}>
-            <button>Buy This Song</button>
+          <Link
+            to={"/25-pnyx/purchased-song-player"}
+            state={{ key: true }}
+            onClick={(e) => {
+              if (isTimerExpired) e.preventDefault(); // prevent link navigation if timer is expired
+            }}
+          >
+            <button disabled={isTimerExpired}>Buy This Song</button>
           </Link>
         </div>
       </div>
