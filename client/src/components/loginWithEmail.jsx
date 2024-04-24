@@ -4,6 +4,7 @@ import "../styles/loginWithEmail.css";
 import { Link, useNavigate, Outlet } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
 import { useUserID } from "./context/UserIDContext";
+import { useReferedBy } from "./context/referedByProvider";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -11,8 +12,8 @@ export default function LoginWithEmail() {
   const [state, setState] = useState("init"); // "init" | "emter_email" | "sending_email" | "email_verification"
   const [verificationCode, setVerificationCode] = useState("");
   const { connect, sendVerificationEmail } = useEmbeddedWallet();
-  const navigate = useNavigate();
   const { userID, setUserID } = useUserID();
+  const { referedBy } = useReferedBy();
 
   const handleEmailClicked = async () => {
     setState("emter_email");
@@ -23,35 +24,31 @@ export default function LoginWithEmail() {
       setError("enter email");
       return;
     }
-    
+
     try {
       // Send POST request to the specified URL with email as payload
       // artist_id hardcoded for now
-      const response = await fetch("https://25-pnyx-3hfydn1fl-vidhip30s-projects.vercel.app/signup", {
+      // TODO: Find out what artist_id doing here with user email.
+      const response = await fetch("http://127.0.0.1:5000/signup", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, artist_id: 1 })
-        
-      })
-  
+        body: JSON.stringify({ email, artist_id: 1 }),
+      });
+
       if (!response.ok) {
-        throw new Error("Failed to send verification email");
+        throw new Error("Failed to send email");
       }
       // Parse the response body as JSON and save userID for future use
       const responseData = await response.json();
-      setUserID(responseData['userID']);
-      console.log(responseData);
-
-  
+      setUserID(responseData["userID"]);
     } catch (error) {
-      console.error("Error sending verification email:", error);
+      console.error("Error sending email:", error);
     }
     setState("sending_email");
     await sendVerificationEmail({ email });
     setState("email_verification");
-    
   };
 
   const handleEmailVerification = async () => {
@@ -59,9 +56,11 @@ export default function LoginWithEmail() {
       setError("enter verification code");
       return;
     }
-    // await connect({ strategy: "email_verification", email, verificationCode });
-    // Navigate to the '/choose-artists' page after verification
-    navigate("/choose-artists");
+    await connect({
+      strategy: "email_verification",
+      email,
+      verificationCode,
+    });
   };
 
   if (state === "emter_email") {
@@ -105,10 +104,16 @@ export default function LoginWithEmail() {
         <div>
           {error === "enter verification code" ? "Please enter a code" : ""}
         </div>
-        <Link to="/choose-artists">
-          <BorderButton title="Verify" onClick={handleEmailVerification} />
-        </Link>
-        <Outlet /> 
+        {referedBy ? (
+          <Link to="/hidden-player">
+            <BorderButton title="Verify" onClick={handleEmailVerification} />
+          </Link>
+        ) : (
+          <Link to="/choose-artists">
+            <BorderButton title="Verify" onClick={handleEmailVerification} />
+          </Link>
+        )}
+        {/* <Outlet /> */}
         <BorderButton title="Go Back" onClick={() => setState("init")} />
       </>
     );

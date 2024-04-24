@@ -1,20 +1,25 @@
-import Login from "./login";
-import { useOutlet } from "react-router-dom";
+import { useEffect } from "react";
+import { useLoaderData, useNavigate, Outlet } from "react-router-dom";
 import { useAddress } from "@thirdweb-dev/react";
-import Screen248 from "./Screen248";
+import { useReferedBy } from "./context/referedByProvider";
 
 const Home = () => {
   const address = useAddress();
-  const outlet = useOutlet();
+  const artist = useLoaderData();
+  const { setReferedBy } = useReferedBy();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (artist) {
+      const { artistId } = artist;
+      setReferedBy(artistId);
+    }
+    address ? <>{navigate("/hidden-player")}</> : navigate("/login");
+  }, [artist, setReferedBy, address, navigate]);
+
   return (
     <>
-      {address ? (
-        <>{outlet || <Screen248 />}</>
-      ) : (
-        <>
-          <Login />
-        </>
-      )}
+      <Outlet />
     </>
   );
 };

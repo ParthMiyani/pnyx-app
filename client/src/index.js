@@ -1,15 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { UserIDProvider } from './components/context/UserIDContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { UserIDProvider } from "./components/context/UserIDContext";
+import { SonglistProvider } from "./components/context/SonglistContext";
+import { SelectedSongProvider } from "./components/context/SelectedSongsContext";
+import { ReferedByProvider } from "./components/context/referedByProvider";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserIDProvider>
-      <App />
+      <SonglistProvider>
+        <SelectedSongProvider>
+          <ReferedByProvider>
+            <App />
+          </ReferedByProvider>
+        </SelectedSongProvider>
+      </SonglistProvider>
     </UserIDProvider>
   </React.StrictMode>
 );

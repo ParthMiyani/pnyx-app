@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/Screen251.css";
 import BackButton from "./BackButton";
 import ForwardButton from "./ForwardButton";
 import Searchbar from "./Searchbar";
-import { useAddress } from "@thirdweb-dev/react";
 
 function Screen251() {
+  const [selectedArtist, setSelectedArtist] = useState(null);
+
   return (
     <div className="screen-container">
       <div className="header">
         <BackButton />
-        <p>Choose some artists</p>
-        <ForwardButton />
+        <p>Choose some songs</p>
+        <ForwardButton selectedArtist={selectedArtist} />
       </div>
       <div className="subheader">
         <p>
-          Select a minimum of 1 artist, so we can generate a playlist for you.
+          Select a minimum of 1 song, so we can generate a playlist for you.
         </p>
       </div>
       <div className="searchbar">
-        <Searchbar />
+        <Searchbar setSelectedArtist={setSelectedArtist} />
       </div>
     </div>
   );
