@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../../styles/Screen251.css";
-import BackButton from "./BackButton";
-import ForwardButton from "./ForwardButton";
-import Searchbar from "./Searchbar";
+import "../../styles/chooseArtistsPage.css";
+import BackButton from "../ui/BackButton";
+import ForwardButton from "../ui/ForwardButton";
+import Searchbar from "../ui/Searchbar";
 
-function Screen251() {
+export default function ChooseArtistsPage() {
   const [selectedArtist, setSelectedArtist] = useState(null);
 
   return (
@@ -25,4 +25,3 @@ function Screen251() {
     </div>
   );
 }
-export default Screen251;

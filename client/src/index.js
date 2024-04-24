@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { UserIDProvider } from "./components/context/UserIDContext";
-import { SonglistProvider } from "./components/context/SonglistContext";
-import { SelectedSongProvider } from "./components/context/SelectedSongsContext";
-import { ReferedByProvider } from "./components/context/referedByProvider";
+import { UserIDProvider } from "./context/UserIDContext";
+import { SonglistProvider } from "./context/SonglistContext";
+import { SelectedSongProvider } from "./context/SelectedSongsContext";
+import { ReferedByProvider } from "./context/referedByProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

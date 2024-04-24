@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Screen253.css";
-import cube from "../assets/Cube.png";
+import "../../styles/loadingCubePage.css";
+import cube from "../../assets/Cube.png";
 
-function Screen253() {
+export default function LoadingCubePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,5 +26,3 @@ function Screen253() {
     </div>
   );
 }
-
-export default Screen253;

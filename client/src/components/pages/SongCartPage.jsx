@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Screen250.css";
-import tempImage from "./tempImage.webp";
+import "../../styles/songCartPage.css";
+import tempImage from "../../assets/tempImage.webp";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Link } from "react-router-dom";
-import { useSelectedSong } from "./context/SelectedSongsContext";
+import { useSelectedSong } from "../../context/SelectedSongsContext";
 
-function Screen250() {
+export default function SongCartPage() {
   const { selectedSong } = useSelectedSong();
   const [timer, setTimer] = useState(selectedSong.timeLeft);
   const [isTimerExpired, setIsTimerExpired] = useState(false);
@@ -61,6 +61,7 @@ function Screen250() {
             98% of the primary market sale earnings will be awarded to the
             musican.
           </p>
+          {/* TODO: i think it should be off-chain, right? */}
           <h3>Offichain benefits</h3>
           <div className="description">
             <CheckCircleIcon style={{ color: "#e5cffe" }} />
@@ -102,5 +103,3 @@ function Screen250() {
     </>
   );
 }
-
-export default Screen250;

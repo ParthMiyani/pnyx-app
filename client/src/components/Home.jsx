@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLoaderData, useNavigate, Outlet } from "react-router-dom";
 import { useAddress } from "@thirdweb-dev/react";
-import { useReferedBy } from "./context/referedByProvider";
+import { useReferedBy } from "../context/referedByProvider";
 
 const Home = () => {
   const address = useAddress();

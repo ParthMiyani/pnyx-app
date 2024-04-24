@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import "../styles/Screen248.css";
+import { useState, useRef, useEffect } from "react";
+import "../../styles/hiddenPlayerPage.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PauseIcon from "@mui/icons-material/Pause";
@@ -10,12 +10,12 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import IconButton from "@mui/material/IconButton";
 import { useDisconnect } from "@thirdweb-dev/react";
 import { Link } from "react-router-dom";
-import { useUserID } from "./context/UserIDContext";
-import { useData } from "./context/SonglistContext";
-import { useSelectedSong } from "./context/SelectedSongsContext";
-import getSelectedSong from "./songProvider";
+import { useUserID } from "../../context/UserIDContext";
+import { useData } from "../../context/SonglistContext";
+import { useSelectedSong } from "../../context/SelectedSongsContext";
+import getSelectedSong from "../songProvider";
 
-function Screen248() {
+export default function HiddenPlayerPage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [userData, setUserData] = useState(null); // State to hold user data
   const { userID } = useUserID();
@@ -223,5 +223,3 @@ function PlayerControls({ isPlaying, togglePlayPause }) {
     </div>
   );
 }
-
-export default Screen248;

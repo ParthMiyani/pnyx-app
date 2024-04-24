@@ -3,8 +3,8 @@ import { useEmbeddedWallet } from "@thirdweb-dev/react";
 import "../styles/loginWithEmail.css";
 import { Link, useNavigate, Outlet } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
-import { useUserID } from "./context/UserIDContext";
-import { useReferedBy } from "./context/referedByProvider";
+import { useUserID } from "../context/UserIDContext";
+import { useReferedBy } from "../context/referedByProvider";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");

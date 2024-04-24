@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import "../styles/login.css";
+import "../../styles/loginPage.css";
 import {
   useWallet,
   useConnectionStatus,
   useAddress,
 } from "@thirdweb-dev/react";
-import LoginWithEmail from "./loginWithEmail";
+import LoginWithEmail from "../loginWithEmail";
 import { Link, Outlet } from "react-router-dom";
-import BorderButton from "../components/ui/BorderButton";
+import BorderButton from "../ui/BorderButton";
 
-function Login() {
+export default function LoginPage() {
   const address = useAddress();
   const connectedWallet = useWallet("embeddedWallet");
   const [email, setEmail] = useState("");
@@ -47,5 +47,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
