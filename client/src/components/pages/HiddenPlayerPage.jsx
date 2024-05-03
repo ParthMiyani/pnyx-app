@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import "../../styles/hiddenPlayerPage.css";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
@@ -14,6 +14,9 @@ import { useUserID } from "../../context/UserIDContext";
 import { useData } from "../../context/SonglistContext";
 import { useSelectedSong } from "../../context/SelectedSongsContext";
 import getSelectedSong from "../songProvider";
+import { Canvas } from "@react-three/fiber";
+import Model from '../cube/Cube.tsx';
+import { OrbitControls } from "@react-three/drei";
 
 export default function HiddenPlayerPage() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -102,6 +105,28 @@ export default function HiddenPlayerPage() {
             </Link>
           </div>
         </div>
+        <div className="cube3">
+        <Canvas> 
+          <OrbitControls enablePan={false} />
+          <directionalLight position={[1, 0, 0]} args={['#2806a6', 5]} />
+          <directionalLight position={[-1, 0, 0]} args={['#4000ed', 0.5]} />
+          <directionalLight position={[0, 0, 1]} args={['#4000ed', 5]} />
+          <directionalLight position={[0, 0, -1]} args={['#4000ed', 3]} />
+          <directionalLight position={[0, 1, 0]} args={['#4000ed', 5]} />
+          <directionalLight position={[0, -1, 0]} args={['#2806a6', 2]} />
+          <Suspense fallback={null}>
+            <Model>
+            <meshPhysicalMaterial 
+              metalness={10} // Adjust the metalness to control reflectivity
+              roughness={0.1} // Adjust the roughness to control surface smoothness
+              transmission={10} // Sets the transmission to simulate transparency
+              opacity={0.8} // Sets the opacity for the glass-like effect
+              transparent
+            />
+            </Model>
+          </Suspense>
+        </Canvas>
+      </div>
         {selectedSongLoaded && (
           <PlayerControls
             isPlaying={isPlaying}
@@ -110,6 +135,7 @@ export default function HiddenPlayerPage() {
         )}
       </div>
     </div>
+    
   );
 }
 

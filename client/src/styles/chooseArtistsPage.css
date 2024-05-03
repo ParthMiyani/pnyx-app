@@ -36,9 +36,14 @@
   }
 
   .searchbar {
-    margin-top: 20rem;
+    margin-top: 5rem;
     align-items: center;
     text-align: center;
   }
   
+  .cube1 {
+    width: 300px;
+    height: 300px;
+    margin-bottom: -50px; 
+    }
   /* Add any additional styling for the rest of your components */
