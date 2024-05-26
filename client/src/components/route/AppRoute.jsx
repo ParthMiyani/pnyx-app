@@ -21,9 +21,12 @@ const appRouter = createBrowserRouter(
       <Route
         path="refer/:artistId"
         element={<Home />}
-        loader={({ params }) => {
+        loader={async ({ params }) => {
           if (params.artistId) {
-            return fetchArtist(params.artistId);
+            const res = await fetchArtist(params.artistId);
+            if (res) {
+              return res;
+            }
           }
           return null;
         }}

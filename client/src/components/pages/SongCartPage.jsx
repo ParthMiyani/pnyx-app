@@ -3,52 +3,52 @@ import "../../styles/songCartPage.css";
 import tempImage from "../../assets/tempImage.webp";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Link } from "react-router-dom";
-import { useSelectedSong } from "../../context/SelectedSongsContext";
+// import { useSelectedSong } from "../../context/selectedArtistProvider";
 
 export default function SongCartPage() {
-  const { selectedSong } = useSelectedSong();
-  const [timer, setTimer] = useState(selectedSong.timeLeft);
+  // const { selectedSong } = useSelectedSong();
+  // const [timer, setTimer] = useState(selectedSong.timeLeft);
   const [isTimerExpired, setIsTimerExpired] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const [hours, minutes, seconds] = timer.split(":").map(Number);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const [hours, minutes, seconds] = timer.split(":").map(Number);
 
-      let remainingHours = hours;
-      let remainingMinutes = minutes;
-      let remainingSeconds = seconds;
+  //     let remainingHours = hours;
+  //     let remainingMinutes = minutes;
+  //     let remainingSeconds = seconds;
 
-      remainingSeconds--;
+  //     remainingSeconds--;
 
-      if (remainingSeconds < 0) {
-        remainingSeconds = 59;
-        remainingMinutes--;
+  //     if (remainingSeconds < 0) {
+  //       remainingSeconds = 59;
+  //       remainingMinutes--;
 
-        if (remainingMinutes < 0) {
-          remainingMinutes = 59;
-          remainingHours--;
+  //       if (remainingMinutes < 0) {
+  //         remainingMinutes = 59;
+  //         remainingHours--;
 
-          if (remainingHours < 0) {
-            clearInterval(interval);
-            setTimer("00:00:00");
-            setIsTimerExpired(true);
-            return;
-          }
-        }
-      }
+  //         if (remainingHours < 0) {
+  //           clearInterval(interval);
+  //           setTimer("00:00:00");
+  //           setIsTimerExpired(true);
+  //           return;
+  //         }
+  //       }
+  //     }
 
-      const formattedHours = String(remainingHours).padStart(2, "0");
-      const formattedMinutes = String(remainingMinutes).padStart(2, "0");
-      const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+  //     const formattedHours = String(remainingHours).padStart(2, "0");
+  //     const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+  //     const formattedSeconds = String(remainingSeconds).padStart(2, "0");
 
-      const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-      setTimer(formattedTime);
-    }, 1000);
+  //     const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+  //     setTimer(formattedTime);
+  //   }, 1000);
 
-    return () => clearInterval(interval);
-  }, [timer]);
+  //   return () => clearInterval(interval);
+  // }, [timer]);
 
-  const price = selectedSong.price;
+  const price = "20";
 
   return (
     <>
@@ -78,7 +78,7 @@ export default function SongCartPage() {
           <div className="buyDetails">
             <div className="buyContent">
               <p className="buyHeading">Ending In</p>
-              <p className="buySubContent">{timer}</p>
+              <p className="buySubContent">{"8h 10m"}</p>
             </div>
             <div className="buyContent">
               <p className="buyHeading">Quantity</p>

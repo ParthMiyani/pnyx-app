@@ -1,10 +1,11 @@
 import { React, useState } from "react";
 import { useEmbeddedWallet } from "@thirdweb-dev/react";
 import "../styles/loginWithEmail.css";
-import { Link, useNavigate, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BorderButton from "../components/ui/BorderButton";
-import { useUserID } from "../context/UserIDContext";
-import { useReferedBy } from "../context/referedByProvider";
+import { useUserData } from "../context/UserDataContext";
+import { useReferedBy } from "../context/ReferedByProvider";
+import { fetchUserData } from "../api/fetchUserData";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -12,8 +13,9 @@ export default function LoginWithEmail() {
   const [state, setState] = useState("init"); // "init" | "emter_email" | "sending_email" | "email_verification"
   const [verificationCode, setVerificationCode] = useState("");
   const { connect, sendVerificationEmail } = useEmbeddedWallet();
-  const { userID, setUserID } = useUserID();
+  const { setUserData } = useUserData();
   const { referedBy } = useReferedBy();
+  const navigate = useNavigate();
 
   const handleEmailClicked = async () => {
     setState("emter_email");
@@ -40,9 +42,9 @@ export default function LoginWithEmail() {
       if (!response.ok) {
         throw new Error("Failed to send email");
       }
-      // Parse the response body as JSON and save userID for future use
       const responseData = await response.json();
-      setUserID(responseData["userID"]);
+      const resUserData = await fetchUserData(responseData["userID"]);
+      setUserData({ userid: responseData["userID"], ...resUserData });
     } catch (error) {
       console.error("Error sending email:", error);
     }
@@ -56,11 +58,17 @@ export default function LoginWithEmail() {
       setError("enter verification code");
       return;
     }
-    await connect({
-      strategy: "email_verification",
-      email,
-      verificationCode,
-    });
+    try {
+      await connect({
+        strategy: "email_verification",
+        email,
+        verificationCode,
+      });
+    } catch (error) {
+      console.error("Error verifying email:", error);
+
+      navigate("/");
+    }
   };
 
   if (state === "emter_email") {
@@ -105,7 +113,7 @@ export default function LoginWithEmail() {
           {error === "enter verification code" ? "Please enter a code" : ""}
         </div>
         {referedBy ? (
-          <Link to="/hidden-player">
+          <Link to="/loading">
             <BorderButton title="Verify" onClick={handleEmailVerification} />
           </Link>
         ) : (

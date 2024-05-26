@@ -3,23 +3,26 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { UserIDProvider } from "./context/UserIDContext";
-import { SonglistProvider } from "./context/SonglistContext";
-import { SelectedSongProvider } from "./context/SelectedSongsContext";
-import { ReferedByProvider } from "./context/referedByProvider";
+import { UserDataProvider } from "./context/UserDataContext";
+import { SongListProvider } from "./context/SongListProvider";
+import { SongDataProvider } from "./context/SongDataProvider";
+import { ReferedByProvider } from "./context/ReferedByProvider";
+import { CurrentSongProvider } from "./context/CurrentSongProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <UserIDProvider>
-      <SonglistProvider>
-        <SelectedSongProvider>
+    <UserDataProvider>
+      <SongListProvider>
+        <SongDataProvider>
           <ReferedByProvider>
-            <App />
+            <CurrentSongProvider>
+              <App />
+            </CurrentSongProvider>
           </ReferedByProvider>
-        </SelectedSongProvider>
-      </SonglistProvider>
-    </UserIDProvider>
+        </SongDataProvider>
+      </SongListProvider>
+    </UserDataProvider>
   </React.StrictMode>
 );
 

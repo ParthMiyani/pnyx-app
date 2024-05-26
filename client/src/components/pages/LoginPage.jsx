@@ -28,7 +28,7 @@ export default function LoginPage() {
       <div className="sub-text">REFERRED BY TAYLOR SWIFT</div>
       {address ? (
         <>
-          <Link to="/choose-artists">
+          <Link to="/loading">
             <BorderButton title="Continue" />
           </Link>
           <Outlet />

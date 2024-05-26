@@ -5,7 +5,6 @@ export const fetchArtist = async (artistId) => {
       throw new Error("Failed to fetch artist data");
     }
     const artistData = await response.json();
-    console.log(artistData);
     return artistData;
   } catch (error) {
     console.error("Error fetching artist:", error);
