@@ -1,0 +1,44 @@
+.screen-container {
+    height: 100vh;
+    width: 100vw; 
+
+    /* background:
+        radial-gradient(circle at 110% 10%, rgba(137, 142, 255, 0.4) 4%,transparent 30%),
+        radial-gradient(circle at 110% 10%, rgba(71,56,108, 0.5) 20%, rgba(20,20,22, 0.5) 100%),  
+        radial-gradient(circle at 50% 40%, rgba(16, 45, 244, 1) 0.1%, transparent 45%),
+        radial-gradient(circle at 80% 40%, rgba(139, 19, 144, 1) 0.1%, transparent 35%);
+    background-color: black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+    color: white;
+    width: 100%; 
+
+  }
+
+  .subheader {
+    /* font-size: ; */
+    margin-top: -0.3rem;
+    color: #7B75A1;
+    /* display: flex; */
+    align-items: center;
+    text-align: center; 
+    font-size: 14px;
+    width: 60%;
+  }
+
+  .searchbar {
+    margin-top: 20rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Add any additional styling for the rest of your components */

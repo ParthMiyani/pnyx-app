@@ -1,0 +1,17 @@
+
+.button {
+    width: 90vw;
+    height: 80px;
+    border-radius: 48px;
+    border: #FFFFFF 2px solid;
+    background:rgba(255,255,255,0);
+    color: #FFFFFF;
+    font-size: 1em;width: 90vw;
+    height: 80px;
+    border-radius: 48px;
+    border: #FFFFFF 2px solid;
+    background:rgba(255,255,255,0);
+    color: #FFFFFF;
+    font-size: 1em;
+    margin-top: 10vh;
+}

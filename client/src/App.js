@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ThirdwebProvider, embeddedWallet } from "@thirdweb-dev/react";
+import { RouterProvider } from "react-router-dom";
+import appRouter from "./components/route/AppRoute";
+import Background from "./components/ui/background/Background";
+import "./styles/ui/background/background.css";
+
+const activeChain = "ethereum";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThirdwebProvider
+        activeChain={activeChain}
+        clientId={process.env.REACT_APP_THIRDWEB_CLIENT_ID}
+        supportedWallets={[embeddedWallet()]}
+      >
+        <Background />
+        <div className="content">
+          <RouterProvider router={appRouter} />
+        </div>
+      </ThirdwebProvider>
     </div>
   );
 }

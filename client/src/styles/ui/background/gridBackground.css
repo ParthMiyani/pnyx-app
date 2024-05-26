@@ -1,0 +1,23 @@
+.perent {
+  height: 500px;
+  width: 500px;
+  perspective: 300px;
+}
+
+.grid-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns, adjust as needed */
+  grid-template-rows: repeat(14, 1fr); /* 10 rows, adjust as needed */
+  transform-style: preserve-3d;
+  transform-origin: center top;
+  transform: rotateX(38deg);
+}
+  
+/* Style for grid cells */
+.grid-container div {
+  margin: 1px;
+  background-color: #000;
+}
