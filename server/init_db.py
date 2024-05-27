@@ -1,21 +1,17 @@
-import os
-import psycopg2
 from db_connection import get_db_connection
 from dotenv import load_dotenv
 
 load_dotenv()
-# url = os.getenv("DATABASE_URL")
-# conn = psycopg2.connect(url)
 conn = get_db_connection()
 cur = conn.cursor()
 
 
-
-cur.execute('DROP TABLE IF EXISTS Artists;')
+cur.execute('DROP TABLE IF EXISTS Artists CASCADE;')
 cur.execute('CREATE TABLE Artists (artist_id INTEGER PRIMARY KEY,'
-                                  'ArtistName VARCHAR(50) );'
+                                  'artistname VARCHAR(50),'
+                                  'song_name text[] );'
                                  )
-cur.execute('DROP TABLE IF EXISTS Users;')
+cur.execute('DROP TABLE IF EXISTS Users CASCADE;')
 
 cur.execute('CREATE TABLE Users (userID INTEGER PRIMARY KEY,'
                                  'email VARCHAR(50),'
@@ -31,24 +27,26 @@ cur.execute('CREATE TABLE Users (userID INTEGER PRIMARY KEY,'
 
 
 
-cur.execute('DROP TABLE IF EXISTS Genres;')
+cur.execute('DROP TABLE IF EXISTS Genres CASCADE;')
 cur.execute('CREATE TABLE Genres (genre_id INTEGER PRIMARY KEY,'
                                 'genreName VARCHAR(50));'
                                  ) 
 
-cur.execute('DROP TABLE IF EXISTS Songs;')
+cur.execute('DROP TABLE IF EXISTS Songs CASCADE;')
 cur.execute('CREATE TABLE Songs (song_id INTEGER PRIMARY KEY,'
                                 'song_name VARCHAR(200),'
                                 'song_link VARCHAR(200),'
                                 'genre_id INTEGER REFERENCES genres,'
-                                'price INTEGER);')
+                                'price INTEGER,'
+                                'duartion VARCHAR(10),'
+                                'song_artist text[]);')
                                  
-cur.execute('DROP TABLE IF EXISTS Revealed;')
+cur.execute('DROP TABLE IF EXISTS Revealed CASCADE;')
 cur.execute('CREATE TABLE Revealed (reveal_id INTEGER PRIMARY KEY,'
                                 'userID INTEGER REFERENCES Users ON DELETE CASCADE ,'
                                 'song_id INTEGER REFERENCES Songs);'
                                  ) 
-cur.execute('DROP TABLE IF EXISTS Purchases;')
+cur.execute('DROP TABLE IF EXISTS Purchases CASCADE;')
 cur.execute('CREATE TABLE Purchases (purchase_id INTEGER PRIMARY KEY,'
                                 'userID INTEGER REFERENCES Users ON DELETE CASCADE ,'
                                 'song_id INTEGER REFERENCES Songs);'
