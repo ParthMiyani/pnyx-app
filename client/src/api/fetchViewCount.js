@@ -1,7 +1,7 @@
 export const fetchViewCount = async (userID) => {
   try {
     const response = await fetch(
-      `http://127.0.0.1:5000/users/${userID}/user-song-views`,
+      `https://pnyxbackend-pnyx-team.vercel.app/users/${userID}/user-song-views`,
       {
         method: "PUT",
         headers: {
