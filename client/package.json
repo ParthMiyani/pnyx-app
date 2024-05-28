@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://parthmiyani.github.io/pnyx-app/client",
+  "homepage": "https://parthmiyani.github.io/pnyx-app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",

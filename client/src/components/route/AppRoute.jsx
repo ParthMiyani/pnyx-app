@@ -15,7 +15,7 @@ import PurchasedSongPage from "../pages/PurchasedSongPage";
 import { fetchArtist } from "../../api/fetchArtist";
 
 const appRouter = createBrowserRouter(
-  { basename: "pnyx-app/client" },
+  { basename: "pnyx-app/" },
   createRoutesFromElements(
     <>
       <Route path="/" element={<Home />} />
