@@ -22,7 +22,7 @@ export default function PlayerControls({
     return `${formattedMinutes}:${formattedSeconds}`;
   }
 
-  let songLength = currentSong.length;
+  let songLength = currentSong.duration;
   let songTimer = "00:00";
   const [timer, setTimer] = useState(songTimer);
 

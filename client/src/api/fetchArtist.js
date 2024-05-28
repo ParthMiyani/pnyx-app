@@ -1,6 +1,8 @@
 export const fetchArtist = async (artistId) => {
   try {
-    const response = await fetch(`http://127.0.1.:5000/artists/${artistId}`);
+    const response = await fetch(
+      `https://pnyxbackend-pnyx-team.vercel.app/artists/${artistId}`
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch artist data");
     }

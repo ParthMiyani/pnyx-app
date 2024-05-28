@@ -6,6 +6,7 @@ import BorderButton from "../components/ui/BorderButton";
 import { useUserData } from "../context/UserDataContext";
 import { useReferedBy } from "../context/ReferedByProvider";
 import { fetchUserData } from "../api/fetchUserData";
+import { fetchSignup } from "../api/fetchSignup";
 
 export default function LoginWithEmail() {
   const [email, setEmail] = useState("");
@@ -31,18 +32,7 @@ export default function LoginWithEmail() {
       // Send POST request to the specified URL with email as payload
       // artist_id hardcoded for now
       // TODO: Find out what artist_id doing here with user email.
-      const response = await fetch("http://127.0.0.1:5000/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, artist_id: 1 }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send email");
-      }
-      const responseData = await response.json();
+      const responseData = await fetchSignup(email, 1 /* artist_id */);
       const resUserData = await fetchUserData(responseData["userID"]);
       setUserData({ userid: responseData["userID"], ...resUserData });
     } catch (error) {
