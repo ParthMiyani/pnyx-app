@@ -15,12 +15,11 @@ import PurchasedSongPage from "../pages/PurchasedSongPage";
 import { fetchArtist } from "../../api/fetchArtist";
 
 const appRouter = createBrowserRouter(
-  { basename: "pnyx-app/" },
   createRoutesFromElements(
     <>
       <Route path="/" element={<Home />} />
       <Route
-        path="refer/:artistId"
+        path="/refer/:artistId"
         element={<Home />}
         loader={async ({ params }) => {
           if (params.artistId) {
@@ -44,7 +43,8 @@ const appRouter = createBrowserRouter(
       />
       <Route path="/purchased-song" element={<PurchasedSongPage />} />
     </>
-  )
+  ),
+  { basename: "/pnyx-app" }
 );
 
 export default appRouter;
